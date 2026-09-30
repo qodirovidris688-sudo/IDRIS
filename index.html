@@ -8,16 +8,39 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
+    <meta
+        name="description"
+        content="USTOYOB — платформа барои зуд пайдо кардани устоҳо дар Тоҷикистон. Устои мошин, барқчӣ, сантехник, устои телефон, сохтмон, мебелсоз ва дигар касбҳо."
+    >
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#07111f">
+    <meta name="application-name" content="USTOYOB">
 
-    <title>USTOYOB | Устои худро пайдо кун</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="USTOYOB">
+    <meta property="og:title" content="USTOYOB — Устои худро зуд пайдо кун">
+    <meta property="og:description" content="Устои лозиматро зуд пайдо кун. Касб, шаҳр ва хизматрасониро интихоб карда устои мувофиқро пайдо кун.">
+    <meta property="og:locale" content="tg_TJ">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="USTOYOB — Устои худро зуд пайдо кун">
+    <meta name="twitter:description" content="Платформа барои пайдо кардани устоҳо ва фармоиш додани хизматрасонӣ.">
+
+    <title>USTOYOB — Устои худро зуд пайдо кун | Мизоҷ ва усто</title>
 
     <link
         rel="stylesheet"
         href="idris.css"
     >
+
+    <style>
+        .skip-link { position: fixed; left: 12px; top: 12px; z-index: 99999; transform: translateY(-150%); padding: 10px 14px; border-radius: 10px; background: #0b8ee8; color: #fff; font-weight: 700; text-decoration: none; }
+        .skip-link:focus { transform: translateY(0); }
+    </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Ба мундариҷаи асосӣ гузар</a>
 
 <!-- =====================================================
      BACKGROUND
@@ -409,6 +432,8 @@
 
                 <input
                     id="workerName"
+                    name="name"
+                    autocomplete="name"
                     type="text"
                     placeholder="Масалан: Идрис"
                 >
@@ -424,6 +449,8 @@
 
                 <input
                     id="workerPhone"
+                    name="tel"
+                    autocomplete="tel"
                     type="tel"
                     placeholder="900000000"
                 >
@@ -439,6 +466,8 @@
 
                 <input
                     id="workerLocation"
+                    name="location"
+                    autocomplete="address-level2"
                     type="text"
                     placeholder="Масалан: Душанбе"
                 >
@@ -571,7 +600,7 @@
     </header>
 
 
-    <main class="main-container">
+    <main id="main-content" class="main-container">
 
 
         <!-- HERO -->
@@ -696,12 +725,17 @@
 
                 <input
                     id="searchInput"
+                    name="search"
+                    autocomplete="off"
+                    enterkeyhint="search"
+                    aria-label="Ҷустуҷӯи усто аз рӯи ном, касб ё шаҳр"
                     type="text"
                     placeholder="Ном, касб ё шаҳр..."
                 >
 
                 <button
                     id="searchButton"
+                    aria-label="Ҷустуҷӯи усто"
                     type="button"
                 >
                     Ҷустуҷӯ
@@ -921,7 +955,7 @@
     </header>
 
 
-    <main class="main-container">
+    <main id="worker-main-content" class="main-container">
 
 
         <section class="worker-hero">
@@ -1228,6 +1262,8 @@
 
         <input
             id="customerName"
+            name="name"
+            autocomplete="name"
             type="text"
             placeholder="👤 Номи шумо"
         >
@@ -1235,6 +1271,8 @@
 
         <input
             id="customerPhone"
+            name="tel"
+            autocomplete="tel"
             type="tel"
             placeholder="📞 Рақами телефон"
         >
@@ -1242,6 +1280,8 @@
 
         <input
             id="orderAddress"
+            name="address"
+            autocomplete="street-address"
             type="text"
             placeholder="📍 Суроға"
         >
@@ -1372,7 +1412,7 @@
 
 
 
-<script src="idris.js"></script>
+<script src="idris.js" defer></script>
 
 </body>
 </html>
