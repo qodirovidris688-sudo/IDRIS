@@ -1,6 +1,8 @@
 /* =========================================================
    USTOYOB
-   IDRIS.JS — КОДИ ПУРРА ВА ТОЗА
+   IDRIS.JS — КОДИ ПУРРА
+   ADMIN ПИНҲОНӢ
+   Ctrl + Shift + A
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,6 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const CUSTOMER_KEY = "ustoyobCustomer";
     const ROLE_KEY = "ustoyobRole";
     const CURRENT_WORKER_KEY = "ustoyobCurrentWorker";
+
+
+
+    /* =====================================================
+       👑 ADMIN — ПИНҲОНӢ
+       
+       Дар сайт ҳеҷ тугмаи ADMIN нест.
+
+       Барои кушодан:
+       CTRL + SHIFT + A
+
+       Парол:
+       12345
+    ===================================================== */
+
+    const ADMIN_PASSWORD = "12345";
+
+    let adminMode = false;
+
 
 
     /* =====================================================
@@ -35,30 +56,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
         } catch (error) {
 
-            console.error("Хатои LocalStorage:", error);
+            console.error(
+                "Хатои LocalStorage:",
+                error
+            );
 
             return fallback;
         }
     }
 
 
+
     function saveData(key, data) {
 
-        localStorage.setItem(
-            key,
-            JSON.stringify(data)
-        );
+        try {
+
+            localStorage.setItem(
+                key,
+                JSON.stringify(data)
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Хатои нигоҳдорӣ:",
+                error
+            );
+        }
     }
+
 
 
     function escapeHtml(value) {
 
-        const div = document.createElement("div");
+        const div =
+            document.createElement("div");
 
-        div.textContent = value ?? "";
+        div.textContent =
+            value ?? "";
 
         return div.innerHTML;
     }
+
 
 
     /* =====================================================
@@ -66,47 +105,70 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     const welcomePage =
-        document.getElementById("welcomePage");
+        document.getElementById(
+            "welcomePage"
+        );
 
     const professionPage =
-        document.getElementById("professionPage");
+        document.getElementById(
+            "professionPage"
+        );
 
     const workerFormPage =
-        document.getElementById("workerFormPage");
+        document.getElementById(
+            "workerFormPage"
+        );
 
     const customerPage =
-        document.getElementById("customerPage");
+        document.getElementById(
+            "customerPage"
+        );
 
     const workerPage =
-        document.getElementById("workerPage");
+        document.getElementById(
+            "workerPage"
+        );
+
 
 
     function hideAllPages() {
 
         if (welcomePage) {
-            welcomePage.classList.add("hidden");
+            welcomePage.classList.add(
+                "hidden"
+            );
         }
 
         if (professionPage) {
-            professionPage.classList.add("hidden");
+            professionPage.classList.add(
+                "hidden"
+            );
         }
 
         if (workerFormPage) {
-            workerFormPage.classList.add("hidden");
+            workerFormPage.classList.add(
+                "hidden"
+            );
         }
 
         if (customerPage) {
-            customerPage.classList.add("hidden");
+            customerPage.classList.add(
+                "hidden"
+            );
         }
 
         if (workerPage) {
-            workerPage.classList.add("hidden");
+            workerPage.classList.add(
+                "hidden"
+            );
         }
+
     }
 
 
+
     /* =====================================================
-       НАВИГАЦИЯ
+       САҲИФАИ АВВАЛ
     ===================================================== */
 
     function showWelcome() {
@@ -114,19 +176,33 @@ document.addEventListener("DOMContentLoaded", function () {
         hideAllPages();
 
         if (welcomePage) {
-            welcomePage.classList.remove("hidden");
+
+            welcomePage.classList.remove(
+                "hidden"
+            );
         }
 
-        window.scrollTo(0, 0);
+        window.scrollTo(
+            0,
+            0
+        );
     }
 
+
+
+    /* =====================================================
+       САҲИФАИ МИЗОҶ
+    ===================================================== */
 
     function showCustomer() {
 
         hideAllPages();
 
         if (customerPage) {
-            customerPage.classList.remove("hidden");
+
+            customerPage.classList.remove(
+                "hidden"
+            );
         }
 
         localStorage.setItem(
@@ -138,16 +214,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateCartCount();
 
-        window.scrollTo(0, 0);
+        window.scrollTo(
+            0,
+            0
+        );
     }
 
+
+
+    /* =====================================================
+       САҲИФАИ КАСБҲО
+    ===================================================== */
 
     function showProfessions() {
 
         hideAllPages();
 
         if (professionPage) {
-            professionPage.classList.remove("hidden");
+
+            professionPage.classList.remove(
+                "hidden"
+            );
         }
 
         localStorage.setItem(
@@ -155,17 +242,32 @@ document.addEventListener("DOMContentLoaded", function () {
             "worker"
         );
 
-        window.scrollTo(0, 0);
+        window.scrollTo(
+            0,
+            0
+        );
     }
 
 
-    function showWorkerForm(profession, icon) {
+
+    /* =====================================================
+       ФОРМАИ УСТО
+    ===================================================== */
+
+    function showWorkerForm(
+        profession,
+        icon
+    ) {
 
         hideAllPages();
 
         if (workerFormPage) {
-            workerFormPage.classList.remove("hidden");
+
+            workerFormPage.classList.remove(
+                "hidden"
+            );
         }
+
 
         const iconElement =
             document.getElementById(
@@ -177,36 +279,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 "chosenProfessionText"
             );
 
+
         if (iconElement) {
-            iconElement.textContent = icon;
+
+            iconElement.textContent =
+                icon;
         }
 
+
         if (textElement) {
-            textElement.textContent = profession;
+
+            textElement.textContent =
+                profession;
         }
+
 
         localStorage.setItem(
             "selectedProfession",
             profession
         );
 
+
         localStorage.setItem(
             "selectedProfessionIcon",
             icon
         );
 
-        window.scrollTo(0, 0);
+
+        window.scrollTo(
+            0,
+            0
+        );
     }
 
 
+
     /* =====================================================
-       МИЗОҶ
+       👤 МИЗОҶ
     ===================================================== */
 
     const customerButton =
         document.getElementById(
             "customerButton"
         );
+
 
     if (customerButton) {
 
@@ -224,19 +340,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
                 showCustomer();
+
             }
         );
     }
 
 
+
     /* =====================================================
-       УСТО
+       🛠️ УСТО
     ===================================================== */
 
     const workerButton =
         document.getElementById(
             "workerButton"
         );
+
 
     if (workerButton) {
 
@@ -250,9 +369,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
                 showProfessions();
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -263,6 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "professionBack"
         );
+
 
     if (professionBack) {
 
@@ -275,9 +397,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
                 showWelcome();
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -289,6 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "workerFormBack"
         );
 
+
     if (workerFormBack) {
 
         workerFormBack.addEventListener(
@@ -296,9 +421,11 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
                 showProfessions();
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -306,26 +433,35 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     document
-        .querySelectorAll(".profession-card")
-        .forEach(function (button) {
+        .querySelectorAll(
+            ".profession-card"
+        )
+        .forEach(
+            function (button) {
 
-            button.addEventListener(
-                "click",
-                function () {
+                button.addEventListener(
+                    "click",
+                    function () {
 
-                    const profession =
-                        button.dataset.profession;
+                        const profession =
+                            button.dataset.profession;
 
-                    const icon =
-                        button.dataset.icon;
+                        const icon =
+                            button.dataset.icon ||
+                            "🛠️";
 
-                    showWorkerForm(
-                        profession,
-                        icon
-                    );
-                }
-            );
-        });
+
+                        showWorkerForm(
+                            profession,
+                            icon
+                        );
+
+                    }
+                );
+
+            }
+        );
+
 
 
     /* =====================================================
@@ -336,6 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "createWorker"
         );
+
 
     if (createWorker) {
 
@@ -374,20 +511,24 @@ document.addEventListener("DOMContentLoaded", function () {
                         ? nameElement.value.trim()
                         : "";
 
+
                 const phone =
                     phoneElement
                         ? phoneElement.value.trim()
                         : "";
+
 
                 const location =
                     locationElement
                         ? locationElement.value.trim()
                         : "";
 
+
                 const experience =
                     experienceElement
                         ? experienceElement.value
                         : "";
+
 
                 const about =
                     aboutElement
@@ -399,6 +540,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     localStorage.getItem(
                         "selectedProfession"
                     );
+
 
                 const icon =
                     localStorage.getItem(
@@ -450,16 +592,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const worker = {
 
-                    id: Date.now(),
+                    id:
+                        Date.now(),
 
-                    name: name,
+                    name:
+                        name,
 
-                    phone: phone,
+                    phone:
+                        phone,
 
-                    location: location,
+                    location:
+                        location,
 
                     experience:
-                        experience || "1 сол",
+                        experience ||
+                        "1 сол",
 
                     about:
                         about ||
@@ -469,9 +616,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         profession,
 
                     icon:
-                        icon || "🛠️",
+                        icon ||
+                        "🛠️",
 
-                    rating: "5.0",
+                    rating:
+                        "5.0",
 
                     createdAt:
                         new Date()
@@ -488,7 +637,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                workers.push(worker);
+                workers.push(
+                    worker
+                );
 
 
                 saveData(
@@ -517,20 +668,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 showWorkerDashboard(
                     worker
                 );
+
             }
         );
     }
 
 
+
     /* =====================================================
-       WORKER DASHBOARD
+       DASHBOARD УСТО
     ===================================================== */
 
-    function showWorkerDashboard(worker) {
+    function showWorkerDashboard(
+        worker
+    ) {
 
         hideAllPages();
 
+
         if (workerPage) {
+
             workerPage.classList.remove(
                 "hidden"
             );
@@ -559,44 +716,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (icon) {
+
             icon.textContent =
-                worker.icon || "🛠️";
+                worker.icon ||
+                "🛠️";
         }
 
+
         if (name) {
+
             name.textContent =
                 worker.name;
         }
 
+
         if (profession) {
+
             profession.textContent =
                 worker.profession;
         }
 
+
         if (experience) {
+
             experience.textContent =
                 worker.experience;
         }
 
 
-        renderWorkerProfile(worker);
+        renderWorkerProfile(
+            worker
+        );
 
-        renderWorkerOrders(worker.id);
 
-        window.scrollTo(0, 0);
+        renderWorkerOrders(
+            worker.id
+        );
+
+
+        window.scrollTo(
+            0,
+            0
+        );
     }
+
 
 
     /* =====================================================
        ПРОФИЛИ УСТО
     ===================================================== */
 
-    function renderWorkerProfile(worker) {
+    function renderWorkerProfile(
+        worker
+    ) {
 
         const box =
             document.getElementById(
                 "workerProfileInfo"
             );
+
 
         if (!box) {
             return;
@@ -612,7 +790,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </span>
 
                 <strong>
-                    ${escapeHtml(worker.name)}
+                    ${escapeHtml(
+                        worker.name
+                    )}
                 </strong>
 
             </div>
@@ -625,7 +805,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </span>
 
                 <strong>
-                    ${escapeHtml(worker.profession)}
+                    ${escapeHtml(
+                        worker.profession
+                    )}
                 </strong>
 
             </div>
@@ -638,7 +820,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </span>
 
                 <strong>
-                    ${escapeHtml(worker.phone)}
+                    ${escapeHtml(
+                        worker.phone
+                    )}
                 </strong>
 
             </div>
@@ -651,7 +835,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </span>
 
                 <strong>
-                    ${escapeHtml(worker.location)}
+                    ${escapeHtml(
+                        worker.location
+                    )}
                 </strong>
 
             </div>
@@ -664,7 +850,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </span>
 
                 <strong>
-                    ${escapeHtml(worker.experience)}
+                    ${escapeHtml(
+                        worker.experience
+                    )}
                 </strong>
 
             </div>
@@ -678,7 +866,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <strong>
                     ${escapeHtml(
-                        worker.rating || "5.0"
+                        worker.rating ||
+                        "5.0"
                     )}
                 </strong>
 
@@ -686,6 +875,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         `;
     }
+
 
 
     /* =====================================================
@@ -696,6 +886,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "workerLogout"
         );
+
 
     if (workerLogout) {
 
@@ -712,9 +903,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
                 showWelcome();
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -725,6 +918,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "customerLogout"
         );
+
 
     if (customerLogout) {
 
@@ -737,9 +931,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
                 showWelcome();
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -754,15 +950,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 []
             );
 
-        renderWorkers(workers);
+
+        renderWorkers(
+            workers
+        );
     }
+
 
 
     /* =====================================================
        НИШОН ДОДАНИ УСТОҲО
     ===================================================== */
 
-    function renderWorkers(workers) {
+    function renderWorkers(
+        workers
+    ) {
 
         const list =
             document.getElementById(
@@ -785,7 +987,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        list.innerHTML = "";
+        list.innerHTML =
+            "";
 
 
         if (count) {
@@ -799,6 +1002,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (workers.length === 0) {
 
             if (empty) {
+
                 empty.style.display =
                     "block";
             }
@@ -808,6 +1012,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (empty) {
+
             empty.style.display =
                 "none";
         }
@@ -858,35 +1063,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         </div>
 
-
-                        <!-- ❌ НЕСТ КАРДАНИ УСТО -->
-
-                        <button
-                            class="delete-worker"
-                            data-id="${worker.id}"
-                            type="button"
-                            title="Нест кардани усто"
-                            aria-label="Нест кардани усто"
-                            style="
-                                margin-left:auto;
-                                width:36px;
-                                height:36px;
-                                border:none;
-                                border-radius:50%;
-                                background:#ef4444;
-                                color:white;
-                                font-size:24px;
-                                font-weight:bold;
-                                cursor:pointer;
-                                display:flex;
-                                align-items:center;
-                                justify-content:center;
-                                box-shadow:0 0 15px rgba(239,68,68,.35);
-                            "
-                        >
-                            ×
-                        </button>
-
                     </div>
 
 
@@ -894,10 +1070,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         ⭐
                         ${escapeHtml(
-                            worker.rating || "5.0"
+                            worker.rating ||
+                            "5.0"
                         )}
 
-                        <span style="color:#788694">
+                        <span
+                            style="
+                                color:#788694
+                            "
+                        >
                             • рейтинг
                         </span>
 
@@ -907,26 +1088,32 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="worker-info">
 
                         <div>
+
                             📍
                             ${escapeHtml(
                                 worker.location
                             )}
+
                         </div>
 
 
                         <div>
+
                             📞
                             ${escapeHtml(
                                 worker.phone
                             )}
+
                         </div>
 
 
                         <div>
+
                             ⏱️ Таҷриба:
                             ${escapeHtml(
                                 worker.experience
                             )}
+
                         </div>
 
                     </div>
@@ -975,119 +1162,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
 
 
-                list.appendChild(card);
+                list.appendChild(
+                    card
+                );
+
             }
         );
 
 
-        /* =================================================
-           DELETE WORKER
-        ================================================= */
-
-        list
-            .querySelectorAll(
-                ".delete-worker"
-            )
-            .forEach(
-                function (button) {
-
-                    button.addEventListener(
-                        "click",
-                        function () {
-
-                            const id =
-                                Number(
-                                    button.dataset.id
-                                );
-
-
-                            const workers =
-                                getData(
-                                    WORKERS_KEY,
-                                    []
-                                );
-
-
-                            const worker =
-                                workers.find(
-                                    function (item) {
-
-                                        return (
-                                            item.id === id
-                                        );
-                                    }
-                                );
-
-
-                            if (!worker) {
-                                return;
-                            }
-
-
-                            const confirmed =
-                                confirm(
-                                    "❌ Устои " +
-                                    worker.name +
-                                    " нест карда шавад?"
-                                );
-
-
-                            if (!confirmed) {
-                                return;
-                            }
-
-
-                            const newWorkers =
-                                workers.filter(
-                                    function (item) {
-
-                                        return (
-                                            item.id !== id
-                                        );
-                                    }
-                                );
-
-
-                            saveData(
-                                WORKERS_KEY,
-                                newWorkers
-                            );
-
-
-                            const currentWorker =
-                                getData(
-                                    CURRENT_WORKER_KEY,
-                                    null
-                                );
-
-
-                            if (
-                                currentWorker &&
-                                currentWorker.id === id
-                            ) {
-
-                                localStorage.removeItem(
-                                    CURRENT_WORKER_KEY
-                                );
-                            }
-
-
-                            renderWorkers(
-                                newWorkers
-                            );
-
-
-                            alert(
-                                "✅ Усто нест карда шуд."
-                            );
-                        }
-                    );
-                }
-            );
-
 
         /* =================================================
-           ORDER BUTTON
+           ФАРМОИШ
         ================================================= */
 
         list
@@ -1112,7 +1197,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                     function (item) {
 
                                         return (
-                                            item.id === id
+                                            item.id ===
+                                            id
                                         );
                                     }
                                 );
@@ -1124,14 +1210,17 @@ document.addEventListener("DOMContentLoaded", function () {
                                     worker
                                 );
                             }
+
                         }
                     );
+
                 }
             );
 
 
+
         /* =================================================
-           CART BUTTON
+           КОРЗИНА
         ================================================= */
 
         list
@@ -1156,7 +1245,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                     function (item) {
 
                                         return (
-                                            item.id === id
+                                            item.id ===
+                                            id
                                         );
                                     }
                                 );
@@ -1168,11 +1258,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                     worker
                                 );
                             }
+
                         }
                     );
+
                 }
             );
+
     }
+
 
 
     /* =====================================================
@@ -1222,42 +1316,58 @@ document.addEventListener("DOMContentLoaded", function () {
                     return (
 
                         String(
-                            worker.name || ""
+                            worker.name ||
+                            ""
                         )
                             .toLowerCase()
-                            .includes(query)
+                            .includes(
+                                query
+                            )
 
                         ||
 
                         String(
-                            worker.profession || ""
+                            worker.profession ||
+                            ""
                         )
                             .toLowerCase()
-                            .includes(query)
+                            .includes(
+                                query
+                            )
 
                         ||
 
                         String(
-                            worker.location || ""
+                            worker.location ||
+                            ""
                         )
                             .toLowerCase()
-                            .includes(query)
+                            .includes(
+                                query
+                            )
 
                         ||
 
                         String(
-                            worker.about || ""
+                            worker.about ||
+                            ""
                         )
                             .toLowerCase()
-                            .includes(query)
+                            .includes(
+                                query
+                            )
 
                     );
+
                 }
             );
 
 
-        renderWorkers(result);
+        renderWorkers(
+            result
+        );
     }
+
 
 
     const searchButton =
@@ -1275,6 +1385,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     if (searchInput) {
 
         searchInput.addEventListener(
@@ -1282,14 +1393,17 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 if (
-                    event.key === "Enter"
+                    event.key ===
+                    "Enter"
                 ) {
 
                     searchWorkers();
                 }
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -1334,10 +1448,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                     "smooth"
                             });
                         }
+
                     }
                 );
+
             }
         );
+
 
 
     /* =====================================================
@@ -1375,15 +1492,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     function () {
 
                         if (searchInput) {
+
                             searchInput.focus();
                         }
 
                     },
                     400
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -1413,15 +1533,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    function addToCart(worker) {
+
+    function addToCart(
+        worker
+    ) {
 
         const exists =
             cart.some(
                 function (item) {
 
                     return (
-                        item.id === worker.id
+                        item.id ===
+                        worker.id
                     );
+
                 }
             );
 
@@ -1436,7 +1561,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        cart.push(worker);
+        cart.push(
+            worker
+        );
 
 
         saveData(
@@ -1454,6 +1581,7 @@ document.addEventListener("DOMContentLoaded", function () {
             " ба корзина илова шуд!"
         );
     }
+
 
 
     function renderCart() {
@@ -1474,12 +1602,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        items.innerHTML = "";
+        items.innerHTML =
+            "";
 
 
-        if (cart.length === 0) {
+        if (
+            cart.length ===
+            0
+        ) {
 
             if (empty) {
+
                 empty.style.display =
                     "block";
             }
@@ -1489,6 +1622,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (empty) {
+
             empty.style.display =
                 "none";
         }
@@ -1509,14 +1643,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 item.innerHTML = `
 
-                    <div class="cart-item-icon">
+                    <div
+                        class="cart-item-icon"
+                    >
 
                         ${worker.icon || "🛠️"}
 
                     </div>
 
 
-                    <div class="cart-item-info">
+                    <div
+                        class="cart-item-info"
+                    >
 
                         <strong>
 
@@ -1549,9 +1687,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
 
 
-                items.appendChild(item);
+                items.appendChild(
+                    item
+                );
             }
         );
+
 
 
         items
@@ -1576,8 +1717,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                     function (item) {
 
                                         return (
-                                            item.id !== id
+                                            item.id !==
+                                            id
                                         );
+
                                     }
                                 );
 
@@ -1590,12 +1733,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             updateCartCount();
 
+
                             renderCart();
+
                         }
                     );
+
                 }
             );
     }
+
 
 
     const cartButton =
@@ -1615,9 +1762,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 openModal(
                     "cartModal"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -1639,9 +1788,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 openModal(
                     "registrationModal"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -1661,11 +1812,13 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
                 alert(
-                    "🔵 Барои Google Login бояд Google Client ID пайваст карда шавад."
+                    "🔵 Барои Google Login аввал Google Client ID пайваст кардан лозим аст."
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -1698,8 +1851,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 saveData(
                     CUSTOMER_KEY,
                     {
-                        type: "phone",
-                        value: phone
+                        type:
+                            "phone",
+
+                        value:
+                            phone
                     }
                 );
 
@@ -1712,9 +1868,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(
                     "✅ Регистрация анҷом шуд!"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -1747,8 +1905,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 saveData(
                     CUSTOMER_KEY,
                     {
-                        type: "email",
-                        value: email
+                        type:
+                            "email",
+
+                        value:
+                            email
                     }
                 );
 
@@ -1761,19 +1922,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(
                     "✅ Регистрация анҷом шуд!"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
        ФАРМОИШ
     ===================================================== */
 
-    let selectedWorker = null;
+    let selectedWorker =
+        null;
 
 
-    function openOrderModal(worker) {
+
+    function openOrderModal(
+        worker
+    ) {
 
         selectedWorker =
             worker;
@@ -1799,6 +1966,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     const sendOrder =
         document.getElementById(
             "sendOrder"
@@ -1821,15 +1989,18 @@ document.addEventListener("DOMContentLoaded", function () {
                         "customerName"
                     );
 
+
                 const customerPhone =
                     document.getElementById(
                         "customerPhone"
                     );
 
+
                 const orderAddress =
                     document.getElementById(
                         "orderAddress"
                     );
+
 
                 const orderDescription =
                     document.getElementById(
@@ -1908,9 +2079,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                orders.push({
+                const newOrder = {
 
-                    id: Date.now(),
+                    id:
+                        Date.now(),
 
                     workerId:
                         selectedWorker.id,
@@ -1941,7 +2113,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             .toLocaleString(
                                 "tg-TJ"
                             )
-                });
+                };
+
+
+                orders.push(
+                    newOrder
+                );
 
 
                 saveData(
@@ -1956,19 +2133,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 if (customerName) {
-                    customerName.value = "";
+                    customerName.value =
+                        "";
                 }
+
 
                 if (customerPhone) {
-                    customerPhone.value = "";
+                    customerPhone.value =
+                        "";
                 }
+
 
                 if (orderAddress) {
-                    orderAddress.value = "";
+                    orderAddress.value =
+                        "";
                 }
 
+
                 if (orderDescription) {
-                    orderDescription.value = "";
+                    orderDescription.value =
+                        "";
                 }
 
 
@@ -1979,16 +2163,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 selectedWorker =
                     null;
+
             }
         );
     }
+
 
 
     /* =====================================================
        ФАРМОИШҲОИ УСТО
     ===================================================== */
 
-    function renderWorkerOrders(workerId) {
+    function renderWorkerOrders(
+        workerId
+    ) {
 
         const orders =
             getData(
@@ -2005,6 +2193,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         order.workerId ===
                         workerId
                     );
+
                 }
             );
 
@@ -2014,10 +2203,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "workerOrders"
             );
 
+
         const empty =
             document.getElementById(
                 "emptyOrders"
             );
+
 
         const pendingCount =
             document.getElementById(
@@ -2038,6 +2229,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         order.status ===
                         "pending"
                     );
+
                 }
             ).length;
 
@@ -2049,12 +2241,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        list.innerHTML = "";
+        list.innerHTML =
+            "";
 
 
-        if (myOrders.length === 0) {
+        if (
+            myOrders.length ===
+            0
+        ) {
 
             if (empty) {
+
                 empty.style.display =
                     "block";
             }
@@ -2064,6 +2261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (empty) {
+
             empty.style.display =
                 "none";
         }
@@ -2121,6 +2319,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3>
 
                         📦 Фармоиш аз
+
                         ${escapeHtml(
                             order.customerName
                         )}
@@ -2128,46 +2327,55 @@ document.addEventListener("DOMContentLoaded", function () {
                     </h3>
 
 
-                    <div class="order-details">
+                    <div
+                        class="order-details"
+                    >
 
                         <div>
+
                             📞
                             ${escapeHtml(
                                 order.customerPhone
                             )}
+
                         </div>
 
 
                         <div>
+
                             📍
                             ${escapeHtml(
                                 order.address
                             )}
+
                         </div>
 
 
                         <div>
+
                             📝
                             ${escapeHtml(
                                 order.description
                             )}
+
                         </div>
 
 
                         <div>
+
                             🕐
                             ${escapeHtml(
                                 order.createdAt
                             )}
+
                         </div>
 
                     </div>
 
 
-                    <div class="
-                        status
-                        ${statusClass}
-                    ">
+                    <div
+                        class="status ${statusClass}"
+                    >
 
                         ${statusText}
 
@@ -2175,46 +2383,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     ${
-                        order.status === "pending"
+                        order.status ===
+                        "pending"
+
                         ?
+
                         `
-                            <div class="order-actions">
 
-                                <button
-                                    class="accept"
-                                    data-id="${order.id}"
-                                    type="button"
-                                >
-                                    ✅ Қабул кардан
-                                </button>
+                        <div
+                            class="order-actions"
+                        >
+
+                            <button
+                                class="accept"
+                                data-id="${order.id}"
+                                type="button"
+                            >
+                                ✅ Қабул кардан
+                            </button>
 
 
-                                <button
-                                    class="reject"
-                                    data-id="${order.id}"
-                                    type="button"
-                                >
-                                    ❌ Рад кардан
-                                </button>
+                            <button
+                                class="reject"
+                                data-id="${order.id}"
+                                type="button"
+                            >
+                                ❌ Рад кардан
+                            </button>
 
-                            </div>
+                        </div>
+
                         `
+
                         :
+
                         ""
                     }
 
                 `;
 
 
-                list.appendChild(card);
+                list.appendChild(
+                    card
+                );
+
             }
         );
 
 
-        /* ҚАБУЛ КАРДАН */
+
+        /* ҚАБУЛ */
 
         list
-            .querySelectorAll(".accept")
+            .querySelectorAll(
+                ".accept"
+            )
             .forEach(
                 function (button) {
 
@@ -2228,16 +2451,21 @@ document.addEventListener("DOMContentLoaded", function () {
                                 ),
                                 "accepted"
                             );
+
                         }
                     );
+
                 }
             );
 
 
-        /* РАД КАРДАН */
+
+        /* РАД */
 
         list
-            .querySelectorAll(".reject")
+            .querySelectorAll(
+                ".reject"
+            )
             .forEach(
                 function (button) {
 
@@ -2251,18 +2479,25 @@ document.addEventListener("DOMContentLoaded", function () {
                                 ),
                                 "rejected"
                             );
+
                         }
                     );
+
                 }
             );
+
     }
+
 
 
     /* =====================================================
        НАВ КАРДАНИ ҲОЛАТИ ФАРМОИШ
     ===================================================== */
 
-    function updateOrder(id, status) {
+    function updateOrder(
+        id,
+        status
+    ) {
 
         const orders =
             getData(
@@ -2276,8 +2511,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 function (item) {
 
                     return (
-                        item.id === id
+                        item.id ===
+                        id
                     );
+
                 }
             );
 
@@ -2310,7 +2547,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 worker
             );
         }
+
     }
+
 
 
     /* =====================================================
@@ -2336,7 +2575,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                if (orders.length === 0) {
+                if (
+                    orders.length ===
+                    0
+                ) {
 
                     alert(
                         "📦 Ҳоло шумо фармоиш надоред."
@@ -2381,7 +2623,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                         message +=
-                            (index + 1) +
+                            (
+                                index +
+                                1
+                            ) +
                             ". 👨‍🔧 " +
                             order.workerName +
                             "\n";
@@ -2396,14 +2641,19 @@ document.addEventListener("DOMContentLoaded", function () {
                         message +=
                             status +
                             "\n\n";
+
                     }
                 );
 
 
-                alert(message);
+                alert(
+                    message
+                );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -2427,9 +2677,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 openModal(
                     "profileModal"
                 );
+
             }
         );
     }
+
 
 
     function renderCustomerProfile() {
@@ -2490,8 +2742,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <strong>
 
                     ${
-                        customer.type === "phone"
+                        customer.type ===
+                        "phone"
+
                         ? "📞 Телефон"
+
                         : "📧 Email"
                     }
 
@@ -2539,14 +2794,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        MODAL
     ===================================================== */
 
-    function openModal(id) {
+    function openModal(
+        id
+    ) {
 
         const modal =
-            document.getElementById(id);
+            document.getElementById(
+                id
+            );
 
 
         if (!modal) {
@@ -2554,14 +2814,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        modal.classList.add("show");
+        modal.classList.add(
+            "show"
+        );
     }
 
 
-    function closeModal(id) {
+
+    function closeModal(
+        id
+    ) {
 
         const modal =
-            document.getElementById(id);
+            document.getElementById(
+                id
+            );
 
 
         if (!modal) {
@@ -2569,8 +2836,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        modal.classList.remove("show");
+        modal.classList.remove(
+            "show"
+        );
     }
+
 
 
     /* =====================================================
@@ -2592,9 +2862,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 closeModal(
                     "registrationModal"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -2616,9 +2888,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 closeModal(
                     "orderModal"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -2640,9 +2914,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 closeModal(
                     "cartModal"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -2664,9 +2940,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 closeModal(
                     "profileModal"
                 );
+
             }
         );
     }
+
 
 
     /* =====================================================
@@ -2674,7 +2952,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     document
-        .querySelectorAll(".modal")
+        .querySelectorAll(
+            ".modal"
+        )
         .forEach(
             function (modal) {
 
@@ -2690,11 +2970,1099 @@ document.addEventListener("DOMContentLoaded", function () {
                             modal.classList.remove(
                                 "show"
                             );
+
                         }
+
                     }
                 );
+
             }
         );
+
+
+
+    /* =====================================================
+       👑 ADMIN — ПИНҲОНӢ
+       
+       ЯГОН ТУГМАИ ADMIN ДАР САЙТ НЕСТ.
+
+       CTRL + SHIFT + A
+    ===================================================== */
+
+    function openHiddenAdmin() {
+
+        const password =
+            prompt(
+                "👑 USTOYOB ADMIN\n\n" +
+                "Пароли админро ворид кунед:"
+            );
+
+
+        if (
+            password ===
+            null
+        ) {
+
+            return;
+        }
+
+
+        if (
+            password !==
+            ADMIN_PASSWORD
+        ) {
+
+            alert(
+                "❌ Парол нодуруст аст!"
+            );
+
+            return;
+        }
+
+
+        adminMode =
+            true;
+
+
+        alert(
+            "✅ Хуш омадед, Админ!"
+        );
+
+
+        openAdminPanel();
+    }
+
+
+
+    /* =====================================================
+       ADMIN PANEL
+    ===================================================== */
+
+    function openAdminPanel() {
+
+        if (!adminMode) {
+            return;
+        }
+
+
+        let panel =
+            document.getElementById(
+                "hiddenAdminPanel"
+            );
+
+
+        if (!panel) {
+
+            panel =
+                document.createElement(
+                    "div"
+                );
+
+
+            panel.id =
+                "hiddenAdminPanel";
+
+
+            panel.style.cssText = `
+
+                position:fixed;
+
+                inset:0;
+
+                z-index:999999;
+
+                background:
+                    linear-gradient(
+                        135deg,
+                        #020617,
+                        #0f172a,
+                        #111827
+                    );
+
+                color:white;
+
+                overflow:auto;
+
+                padding:25px;
+
+                font-family:
+                    Arial,
+                    sans-serif;
+
+            `;
+
+
+            document.body.appendChild(
+                panel
+            );
+        }
+
+
+        const workers =
+            getData(
+                WORKERS_KEY,
+                []
+            );
+
+
+        const orders =
+            getData(
+                ORDERS_KEY,
+                []
+            );
+
+
+        const pending =
+            orders.filter(
+                function (order) {
+
+                    return (
+                        order.status ===
+                        "pending"
+                    );
+
+                }
+            ).length;
+
+
+        const accepted =
+            orders.filter(
+                function (order) {
+
+                    return (
+                        order.status ===
+                        "accepted"
+                    );
+
+                }
+            ).length;
+
+
+        const rejected =
+            orders.filter(
+                function (order) {
+
+                    return (
+                        order.status ===
+                        "rejected"
+                    );
+
+                }
+            ).length;
+
+
+
+        panel.innerHTML = `
+
+            <div
+                style="
+                    max-width:1100px;
+                    margin:0 auto;
+                "
+            >
+
+                <div
+                    style="
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        gap:15px;
+                        margin-bottom:25px;
+                        flex-wrap:wrap;
+                    "
+                >
+
+                    <div>
+
+                        <div
+                            style="
+                                color:#38bdf8;
+                                font-size:14px;
+                                margin-bottom:6px;
+                            "
+                        >
+                            🔒 PRIVATE AREA
+                        </div>
+
+
+                        <h1
+                            style="
+                                margin:0;
+                                font-size:30px;
+                            "
+                        >
+                            👑 USTOYOB ADMIN
+                        </h1>
+
+
+                        <p
+                            style="
+                                color:#94a3b8;
+                                margin-top:8px;
+                            "
+                        >
+                            Панели идоракунии махфӣ
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="closeHiddenAdmin"
+                        type="button"
+                        style="
+                            border:none;
+                            background:#ef4444;
+                            color:white;
+                            padding:12px 20px;
+                            border-radius:12px;
+                            cursor:pointer;
+                            font-size:15px;
+                            font-weight:bold;
+                        "
+                    >
+                        ✕ Баромадан
+                    </button>
+
+                </div>
+
+
+
+                <div
+                    style="
+                        display:grid;
+                        grid-template-columns:
+                            repeat(
+                                auto-fit,
+                                minmax(
+                                    180px,
+                                    1fr
+                                )
+                            );
+                        gap:15px;
+                        margin-bottom:30px;
+                    "
+                >
+
+                    <div
+                        style="
+                            background:#0f2740;
+                            border:1px solid #155e75;
+                            border-radius:18px;
+                            padding:20px;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            👷
+                        </div>
+
+                        <div
+                            style="
+                                color:#94a3b8;
+                                margin-top:8px;
+                            "
+                        >
+                            Ҳамаи устоҳо
+                        </div>
+
+                        <strong
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ${workers.length}
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        style="
+                            background:#30230b;
+                            border:1px solid #854d0e;
+                            border-radius:18px;
+                            padding:20px;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ⏳
+                        </div>
+
+                        <div
+                            style="
+                                color:#94a3b8;
+                                margin-top:8px;
+                            "
+                        >
+                            Интизор
+                        </div>
+
+                        <strong
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ${pending}
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        style="
+                            background:#052e1b;
+                            border:1px solid #047857;
+                            border-radius:18px;
+                            padding:20px;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ✅
+                        </div>
+
+                        <div
+                            style="
+                                color:#94a3b8;
+                                margin-top:8px;
+                            "
+                        >
+                            Қабулшуда
+                        </div>
+
+                        <strong
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ${accepted}
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        style="
+                            background:#3f1111;
+                            border:1px solid #991b1b;
+                            border-radius:18px;
+                            padding:20px;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ❌
+                        </div>
+
+                        <div
+                            style="
+                                color:#94a3b8;
+                                margin-top:8px;
+                            "
+                        >
+                            Радшуда
+                        </div>
+
+                        <strong
+                            style="
+                                font-size:28px;
+                            "
+                        >
+                            ${rejected}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    style="
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                        margin-bottom:25px;
+                    "
+                >
+
+                    <button
+                        id="adminRefresh"
+                        type="button"
+                        style="
+                            border:none;
+                            background:#2563eb;
+                            color:white;
+                            padding:12px 18px;
+                            border-radius:12px;
+                            cursor:pointer;
+                            font-weight:bold;
+                        "
+                    >
+                        🔄 Навсозӣ
+                    </button>
+
+
+                    <button
+                        id="adminLogout"
+                        type="button"
+                        style="
+                            border:none;
+                            background:#475569;
+                            color:white;
+                            padding:12px 18px;
+                            border-radius:12px;
+                            cursor:pointer;
+                            font-weight:bold;
+                        "
+                    >
+                        🔐 Қулф кардан
+                    </button>
+
+                </div>
+
+
+
+                <div
+                    style="
+                        background:#0b1220;
+                        border:1px solid #1e293b;
+                        border-radius:20px;
+                        padding:20px;
+                        margin-bottom:25px;
+                    "
+                >
+
+                    <h2
+                        style="
+                            margin-top:0;
+                        "
+                    >
+                        👷 Рӯйхати устоҳо
+                    </h2>
+
+
+                    <div
+                        id="adminWorkersList"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    style="
+                        background:#0b1220;
+                        border:1px solid #1e293b;
+                        border-radius:20px;
+                        padding:20px;
+                    "
+                >
+
+                    <h2
+                        style="
+                            margin-top:0;
+                        "
+                    >
+                        📦 Ҳамаи фармоишҳо
+                    </h2>
+
+
+                    <div
+                        id="adminOrdersList"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+
+        /* =================================================
+           НИШОН ДОДАНИ УСТОҲО
+        ================================================= */
+
+        const adminWorkersList =
+            document.getElementById(
+                "adminWorkersList"
+            );
+
+
+        if (
+            adminWorkersList
+        ) {
+
+            if (
+                workers.length ===
+                0
+            ) {
+
+                adminWorkersList.innerHTML = `
+
+                    <div
+                        style="
+                            text-align:center;
+                            color:#94a3b8;
+                            padding:30px;
+                        "
+                    >
+                        👷 Ҳоло усто нест.
+                    </div>
+
+                `;
+
+            } else {
+
+                adminWorkersList.innerHTML =
+                    workers.map(
+                        function (worker) {
+
+                            return `
+
+                                <div
+                                    style="
+                                        display:flex;
+                                        align-items:center;
+                                        gap:15px;
+                                        padding:15px;
+                                        margin-bottom:10px;
+                                        background:#111827;
+                                        border:1px solid #1e293b;
+                                        border-radius:15px;
+                                        flex-wrap:wrap;
+                                    "
+                                >
+
+                                    <div
+                                        style="
+                                            width:50px;
+                                            height:50px;
+                                            display:flex;
+                                            align-items:center;
+                                            justify-content:center;
+                                            background:#172554;
+                                            border-radius:14px;
+                                            font-size:25px;
+                                        "
+                                    >
+                                        ${worker.icon || "🛠️"}
+                                    </div>
+
+
+                                    <div
+                                        style="
+                                            flex:1;
+                                            min-width:180px;
+                                        "
+                                    >
+
+                                        <strong>
+                                            ${escapeHtml(
+                                                worker.name
+                                            )}
+                                        </strong>
+
+
+                                        <div
+                                            style="
+                                                color:#38bdf8;
+                                                margin-top:4px;
+                                            "
+                                        >
+                                            ${escapeHtml(
+                                                worker.profession
+                                            )}
+                                        </div>
+
+
+                                        <div
+                                            style="
+                                                color:#94a3b8;
+                                                margin-top:4px;
+                                                font-size:13px;
+                                            "
+                                        >
+                                            📍
+                                            ${escapeHtml(
+                                                worker.location
+                                            )}
+                                            <br>
+
+                                            📞
+                                            ${escapeHtml(
+                                                worker.phone
+                                            )}
+                                        </div>
+
+                                    </div>
+
+
+                                    <button
+                                        class="admin-delete-worker"
+                                        data-id="${worker.id}"
+                                        type="button"
+                                        style="
+                                            border:none;
+                                            background:#dc2626;
+                                            color:white;
+                                            padding:10px 15px;
+                                            border-radius:10px;
+                                            cursor:pointer;
+                                            font-weight:bold;
+                                        "
+                                    >
+                                        🗑️ Нест кардан
+                                    </button>
+
+                                </div>
+
+                            `;
+
+                        }
+                    ).join("");
+            }
+        }
+
+
+
+        /* =================================================
+           НИШОН ДОДАНИ ФАРМОИШҲО
+        ================================================= */
+
+        const adminOrdersList =
+            document.getElementById(
+                "adminOrdersList"
+            );
+
+
+        if (
+            adminOrdersList
+        ) {
+
+            if (
+                orders.length ===
+                0
+            ) {
+
+                adminOrdersList.innerHTML = `
+
+                    <div
+                        style="
+                            text-align:center;
+                            color:#94a3b8;
+                            padding:30px;
+                        "
+                    >
+                        📦 Ҳоло фармоиш нест.
+                    </div>
+
+                `;
+
+            } else {
+
+                adminOrdersList.innerHTML =
+                    orders
+                        .slice()
+                        .reverse()
+                        .map(
+                            function (order) {
+
+                                let status =
+                                    "⏳ Интизор";
+
+                                let statusColor =
+                                    "#f59e0b";
+
+
+                                if (
+                                    order.status ===
+                                    "accepted"
+                                ) {
+
+                                    status =
+                                        "✅ Қабул шуд";
+
+                                    statusColor =
+                                        "#22c55e";
+                                }
+
+
+                                if (
+                                    order.status ===
+                                    "rejected"
+                                ) {
+
+                                    status =
+                                        "❌ Рад шуд";
+
+                                    statusColor =
+                                        "#ef4444";
+                                }
+
+
+                                return `
+
+                                    <div
+                                        style="
+                                            background:#111827;
+                                            border:1px solid #1e293b;
+                                            border-radius:15px;
+                                            padding:16px;
+                                            margin-bottom:12px;
+                                        "
+                                    >
+
+                                        <div
+                                            style="
+                                                display:flex;
+                                                justify-content:space-between;
+                                                gap:10px;
+                                                flex-wrap:wrap;
+                                            "
+                                        >
+
+                                            <strong>
+                                                📦
+                                                ${escapeHtml(
+                                                    order.customerName
+                                                )}
+                                            </strong>
+
+
+                                            <span
+                                                style="
+                                                    color:${statusColor};
+                                                    font-weight:bold;
+                                                "
+                                            >
+                                                ${status}
+                                            </span>
+
+                                        </div>
+
+
+                                        <div
+                                            style="
+                                                color:#94a3b8;
+                                                margin-top:10px;
+                                                line-height:1.8;
+                                            "
+                                        >
+
+                                            👷 Усто:
+                                            ${escapeHtml(
+                                                order.workerName
+                                            )}
+                                            <br>
+
+                                            📞 Мизоҷ:
+                                            ${escapeHtml(
+                                                order.customerPhone
+                                            )}
+                                            <br>
+
+                                            📍 Суроға:
+                                            ${escapeHtml(
+                                                order.address
+                                            )}
+                                            <br>
+
+                                            📝 Кор:
+                                            ${escapeHtml(
+                                                order.description
+                                            )}
+                                            <br>
+
+                                            🕐
+                                            ${escapeHtml(
+                                                order.createdAt
+                                            )}
+
+                                        </div>
+
+                                    </div>
+
+                                `;
+
+                            }
+                        )
+                        .join("");
+            }
+        }
+
+
+
+        /* =================================================
+           БАСТАНИ ADMIN
+        ================================================= */
+
+        const closeHiddenAdmin =
+            document.getElementById(
+                "closeHiddenAdmin"
+            );
+
+
+        if (
+            closeHiddenAdmin
+        ) {
+
+            closeHiddenAdmin.addEventListener(
+                "click",
+                function () {
+
+                    panel.remove();
+
+                }
+            );
+        }
+
+
+
+        /* =================================================
+           REFRESH
+        ================================================= */
+
+        const adminRefresh =
+            document.getElementById(
+                "adminRefresh"
+            );
+
+
+        if (
+            adminRefresh
+        ) {
+
+            adminRefresh.addEventListener(
+                "click",
+                function () {
+
+                    openAdminPanel();
+
+                }
+            );
+        }
+
+
+
+        /* =================================================
+           ҚУЛФ КАРДАН
+        ================================================= */
+
+        const adminLogout =
+            document.getElementById(
+                "adminLogout"
+            );
+
+
+        if (
+            adminLogout
+        ) {
+
+            adminLogout.addEventListener(
+                "click",
+                function () {
+
+                    adminMode =
+                        false;
+
+                    panel.remove();
+
+                }
+            );
+        }
+
+
+
+        /* =================================================
+           НЕСТ КАРДАНИ УСТО
+        ================================================= */
+
+        panel
+            .querySelectorAll(
+                ".admin-delete-worker"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                !adminMode
+                            ) {
+                                return;
+                            }
+
+
+                            const id =
+                                Number(
+                                    button.dataset.id
+                                );
+
+
+                            const currentWorkers =
+                                getData(
+                                    WORKERS_KEY,
+                                    []
+                                );
+
+
+                            const worker =
+                                currentWorkers.find(
+                                    function (
+                                        item
+                                    ) {
+
+                                        return (
+                                            item.id ===
+                                            id
+                                        );
+
+                                    }
+                                );
+
+
+                            if (!worker) {
+                                return;
+                            }
+
+
+                            const confirmed =
+                                confirm(
+                                    "❌ Устои " +
+                                    worker.name +
+                                    " нест карда шавад?"
+                                );
+
+
+                            if (
+                                !confirmed
+                            ) {
+                                return;
+                            }
+
+
+                            const newWorkers =
+                                currentWorkers.filter(
+                                    function (
+                                        item
+                                    ) {
+
+                                        return (
+                                            item.id !==
+                                            id
+                                        );
+
+                                    }
+                                );
+
+
+                            saveData(
+                                WORKERS_KEY,
+                                newWorkers
+                            );
+
+
+                            const currentWorker =
+                                getData(
+                                    CURRENT_WORKER_KEY,
+                                    null
+                                );
+
+
+                            if (
+                                currentWorker &&
+                                currentWorker.id ===
+                                id
+                            ) {
+
+                                localStorage.removeItem(
+                                    CURRENT_WORKER_KEY
+                                );
+                            }
+
+
+                            alert(
+                                "✅ Усто нест карда шуд."
+                            );
+
+
+                            openAdminPanel();
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+
+
+
+    /* =====================================================
+       🔐 КЛАВИАТУРАИ ПИНҲОНӢ
+
+       CTRL + SHIFT + A
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+
+                event.ctrlKey &&
+
+                event.shiftKey &&
+
+                event.key.toLowerCase() ===
+                "a"
+
+            ) {
+
+                event.preventDefault();
+
+
+                if (
+                    adminMode
+                ) {
+
+                    openAdminPanel();
+
+                } else {
+
+                    openHiddenAdmin();
+
+                }
+
+            }
+
+        }
+    );
+
 
 
     /* =====================================================
