@@ -8,39 +8,18 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
-    <meta
-        name="description"
-        content="USTOYOB — платформа барои зуд пайдо кардани устоҳо дар Тоҷикистон. Устои мошин, барқчӣ, сантехник, устои телефон, сохтмон, мебелсоз ва дигар касбҳо."
-    >
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#07111f">
-    <meta name="application-name" content="USTOYOB">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="USTOYOB">
-    <meta property="og:title" content="USTOYOB — Устои худро зуд пайдо кун">
-    <meta property="og:description" content="Устои лозиматро зуд пайдо кун. Касб, шаҳр ва хизматрасониро интихоб карда устои мувофиқро пайдо кун.">
-    <meta property="og:locale" content="tg_TJ">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="USTOYOB — Устои худро зуд пайдо кун">
-    <meta name="twitter:description" content="Платформа барои пайдо кардани устоҳо ва фармоиш додани хизматрасонӣ.">
-
-    <title>USTOYOB — Устои худро зуд пайдо кун | Мизоҷ ва усто</title>
+    <title>
+        USTOYOB | Устои худро пайдо кун
+    </title>
 
     <link
         rel="stylesheet"
         href="idris.css"
     >
-
-    <style>
-        .skip-link { position: fixed; left: 12px; top: 12px; z-index: 99999; transform: translateY(-150%); padding: 10px 14px; border-radius: 10px; background: #0b8ee8; color: #fff; font-weight: 700; text-decoration: none; }
-        .skip-link:focus { transform: translateY(0); }
-    </style>
 </head>
 
 <body>
-<a class="skip-link" href="#main-content">Ба мундариҷаи асосӣ гузар</a>
 
 <!-- =====================================================
      BACKGROUND
@@ -52,7 +31,7 @@
 
 
 <!-- =====================================================
-     САҲИФАИ ИНТИХОБИ РОЛЬ
+     САҲИФАИ ИНТИХОБИ НАКШ
 ===================================================== -->
 
 <section
@@ -139,7 +118,7 @@
                 </strong>
 
                 <small>
-                    Кор меҷӯям
+                    Хизмат мерасонам
                 </small>
 
             </span>
@@ -152,7 +131,15 @@
 
 
         <div class="security">
-            🔒 Маълумоти шумо ҳифз карда мешавад
+
+            <span>
+                🔒
+            </span>
+
+            <span>
+                Маълумоти шумо ҳифз карда мешавад
+            </span>
+
         </div>
 
     </div>
@@ -167,43 +154,51 @@
 
 <section
     id="professionPage"
-    class="screen hidden"
+    class="screen hidden profession-screen"
 >
 
-    <div class="profession-container">
+    <div class="page-container">
 
-        <button
-            id="professionBack"
-            class="back-btn"
-            type="button"
-        >
-            ← Баргаштан
-        </button>
+        <div class="top-page">
 
+            <button
+                id="professionBack"
+                class="back-button"
+                type="button"
+            >
+                ← Бозгашт
+            </button>
 
-        <div class="profession-head">
+            <div class="page-title">
 
-            <div class="small-logo">
-                🛠️
+                <div class="page-icon">
+                    🛠️
+                </div>
+
+                <div>
+
+                    <h1>
+                        Касби худро интихоб кунед
+                    </h1>
+
+                    <p>
+                        Касберо интихоб кунед,
+                        ки шумо дар он кор мекунед
+                    </p>
+
+                </div>
+
             </div>
-
-            <span class="step-label">
-                ҚАДАМИ 1
-            </span>
-
-            <h1>
-                Касби худро интихоб кун
-            </h1>
-
-            <p>
-                Ту кадом усто ҳастӣ?
-            </p>
 
         </div>
 
 
+        <!-- КАСБҲО -->
+
         <div class="profession-grid">
 
+
+            <!-- УСТОИ МОШИН -->
 
             <button
                 class="profession-card"
@@ -212,7 +207,9 @@
                 type="button"
             >
 
-                <span>🚗</span>
+                <span class="profession-icon">
+                    🚗
+                </span>
 
                 <strong>
                     Устои мошин
@@ -225,6 +222,9 @@
             </button>
 
 
+
+            <!-- БАРҚЧӢ -->
+
             <button
                 class="profession-card"
                 data-profession="Барқчӣ"
@@ -232,18 +232,23 @@
                 type="button"
             >
 
-                <span>⚡</span>
+                <span class="profession-icon">
+                    ⚡
+                </span>
 
                 <strong>
                     Барқчӣ
                 </strong>
 
                 <small>
-                    Корҳои барқ
+                    Корҳои барқӣ
                 </small>
 
             </button>
 
+
+
+            <!-- САНТЕХНИК -->
 
             <button
                 class="profession-card"
@@ -252,7 +257,9 @@
                 type="button"
             >
 
-                <span>🚿</span>
+                <span class="profession-icon">
+                    🚿
+                </span>
 
                 <strong>
                     Сантехник
@@ -265,6 +272,9 @@
             </button>
 
 
+
+            <!-- УСТОИ ТЕЛЕФОН -->
+
             <button
                 class="profession-card"
                 data-profession="Устои телефон"
@@ -272,7 +282,9 @@
                 type="button"
             >
 
-                <span>📱</span>
+                <span class="profession-icon">
+                    📱
+                </span>
 
                 <strong>
                     Устои телефон
@@ -285,6 +297,9 @@
             </button>
 
 
+
+            <!-- СОХТМОН -->
+
             <button
                 class="profession-card"
                 data-profession="Сохтмон"
@@ -292,7 +307,9 @@
                 type="button"
             >
 
-                <span>🧱</span>
+                <span class="profession-icon">
+                    🧱
+                </span>
 
                 <strong>
                     Сохтмон
@@ -305,6 +322,9 @@
             </button>
 
 
+
+            <!-- МЕБЕЛСОЗ -->
+
             <button
                 class="profession-card"
                 data-profession="Мебелсоз"
@@ -312,7 +332,9 @@
                 type="button"
             >
 
-                <span>🪑</span>
+                <span class="profession-icon">
+                    🪑
+                </span>
 
                 <strong>
                     Мебелсоз
@@ -325,6 +347,9 @@
             </button>
 
 
+
+            <!-- РАНГУБОРЧӢ -->
+
             <button
                 class="profession-card"
                 data-profession="Рангуборчӣ"
@@ -332,18 +357,23 @@
                 type="button"
             >
 
-                <span>🎨</span>
+                <span class="profession-icon">
+                    🎨
+                </span>
 
                 <strong>
                     Рангуборчӣ
                 </strong>
 
                 <small>
-                    Ранг ва ороиш
+                    Рангубор
                 </small>
 
             </button>
 
+
+
+            <!-- КОНДИЦИОНЕР -->
 
             <button
                 class="profession-card"
@@ -352,10 +382,12 @@
                 type="button"
             >
 
-                <span>❄️</span>
+                <span class="profession-icon">
+                    ❄️
+                </span>
 
                 <strong>
-                    Кондиционер
+                    Устои кондиционер
                 </strong>
 
                 <small>
@@ -365,11 +397,6 @@
             </button>
 
         </div>
-
-
-        <p class="hint">
-            👆 Касби худро интихоб кун
-        </p>
 
     </div>
 
@@ -386,155 +413,148 @@
     class="screen hidden"
 >
 
-    <div class="worker-form-container">
+    <div class="form-container">
 
         <button
             id="workerFormBack"
-            class="back-btn"
+            class="back-button"
             type="button"
         >
-            ← Баргаштан
+            ← Бозгашт
         </button>
 
 
-        <div class="form-title">
+        <div class="form-card">
 
             <div
                 id="chosenProfessionIcon"
-                class="chosen-icon"
+                class="chosen-profession-icon"
             >
                 🛠️
             </div>
 
-            <span class="step-label">
-                ҚАДАМИ 2
-            </span>
-
             <h1>
-                Профили худро соз
+                Профили усто
             </h1>
 
-            <p id="chosenProfessionText">
-                Касб
+            <p class="form-subtitle">
+                Маълумоти худро ворид кунед
             </p>
 
-        </div>
+
+            <!-- КАСБ -->
+
+            <div class="chosen-profession">
+
+                <span>
+                    Касб:
+                </span>
+
+                <strong
+                    id="chosenProfessionText"
+                >
+                    —
+                </strong>
+
+            </div>
 
 
-        <div class="form-grid">
+            <!-- НОМ -->
 
+            <div class="form-group">
 
-            <div class="input-box">
-
-                <label>
-                    👤 Номи шумо
+                <label for="workerName">
+                    👤 Ном ва насаб
                 </label>
 
                 <input
                     id="workerName"
-                    name="name"
-                    autocomplete="name"
                     type="text"
-                    placeholder="Масалан: Идрис"
+                    placeholder="Мисол: Абдулло Саидов"
                 >
 
             </div>
 
 
-            <div class="input-box">
+            <!-- ТЕЛЕФОН -->
 
-                <label>
+            <div class="form-group">
+
+                <label for="workerPhone">
                     📞 Рақами телефон
                 </label>
 
                 <input
                     id="workerPhone"
-                    name="tel"
-                    autocomplete="tel"
                     type="tel"
-                    placeholder="900000000"
+                    placeholder="+992 90 000 00 00"
                 >
 
             </div>
 
 
-            <div class="input-box">
+            <!-- ҶОЙ -->
 
-                <label>
-                    📍 Шаҳр ё ноҳия
+            <div class="form-group">
+
+                <label for="workerLocation">
+                    📍 Шаҳр / ноҳия
                 </label>
 
                 <input
                     id="workerLocation"
-                    name="location"
-                    autocomplete="address-level2"
                     type="text"
-                    placeholder="Масалан: Душанбе"
+                    placeholder="Мисол: Душанбе"
                 >
 
             </div>
 
 
-            <div class="input-box">
+            <!-- ТАҶРИБА -->
 
-                <label>
-                    ⏱️ Таҷриба
+            <div class="form-group">
+
+                <label for="workerExperience">
+                    ⭐ Таҷриба
                 </label>
 
-                <select id="workerExperience">
-
-                    <option value="1 сол">
-                        1 сол
-                    </option>
-
-                    <option value="2 сол">
-                        2 сол
-                    </option>
-
-                    <option value="3 сол">
-                        3 сол
-                    </option>
-
-                    <option value="5 сол">
-                        5 сол
-                    </option>
-
-                    <option value="10 сол">
-                        10 сол
-                    </option>
-
-                    <option value="15+ сол">
-                        15+ сол
-                    </option>
-
-                </select>
+                <input
+                    id="workerExperience"
+                    type="text"
+                    placeholder="Мисол: 5 сол"
+                >
 
             </div>
 
 
-            <div class="input-box full">
+            <!-- ДАР БОРАИ УСТО -->
 
-                <label>
-                    📝 Дар бораи кори худ
+            <div class="form-group">
+
+                <label for="workerAbout">
+                    📝 Дар бораи худ
                 </label>
 
                 <textarea
                     id="workerAbout"
-                    placeholder="Масалан: Ман устои касбӣ ҳастам..."
+                    rows="5"
+                    placeholder="Дар бораи хизматрасонии худ нависед..."
                 ></textarea>
 
             </div>
 
+
+            <!-- СОХТАН -->
+
+            <button
+                id="createWorker"
+                class="main-button"
+                type="button"
+            >
+                ✨ ПРОФИЛРО СОХТАН
+            </button>
+
         </div>
-
-
-        <button
-            id="createWorker"
-            class="main-submit"
-            type="button"
-        >
-            ✨ ПРОФИЛРО СОХТАН
-        </button>
 
     </div>
 
@@ -560,18 +580,134 @@
 
         <div class="header-actions">
 
+
+            <!-- ЗАБОНИ САЙТ -->
+
+            <div class="language-box">
+
+                <button
+                    id="languageButton"
+                    class="language-button"
+                    type="button"
+                >
+                    🌐
+                    <span id="currentLanguage">
+                        TJ
+                    </span>
+                    ▾
+                </button>
+
+
+                <div
+                    id="languageMenu"
+                    class="language-menu hidden"
+                >
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="ru"
+                    >
+                        🇷🇺 Русский
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="tg"
+                    >
+                        🇹🇯 Тоҷикӣ
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="uz"
+                    >
+                        🇺🇿 O‘zbekcha
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="kk"
+                    >
+                        🇰🇿 Қазақша
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="ky"
+                    >
+                        🇰🇬 Кыргызча
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="az"
+                    >
+                        🇦🇿 Azərbaycan dili
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="hy"
+                    >
+                        🇦🇲 Հայերեն
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="be"
+                    >
+                        🇧🇾 Беларуская
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="tk"
+                    >
+                        🇹🇲 Türkmençe
+                    </button>
+
+                    <button
+                        type="button"
+                        class="language-option"
+                        data-lang="ro"
+                    >
+                        🇲🇩 Română
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- КОРЗИНА -->
+
             <button
                 id="cartButton"
                 class="header-btn cart-btn"
                 type="button"
             >
+
                 🛒 Корзина
 
                 <b id="cartCount">
                     0
                 </b>
+
             </button>
 
+
+
+            <!-- РЕГИСТРАТСИЯ -->
 
             <button
                 id="registerButton"
@@ -582,10 +718,26 @@
             </button>
 
 
+
+            <!-- ПРОФИЛ -->
+
+            <button
+                id="profileButton"
+                class="header-btn"
+                type="button"
+            >
+                👤 Профил
+            </button>
+
+
+
             <span class="role-badge">
                 👤 Мизоҷ
             </span>
 
+
+
+            <!-- БАРОМАД -->
 
             <button
                 id="customerLogout"
@@ -600,7 +752,8 @@
     </header>
 
 
-    <main id="main-content" class="main-container">
+
+    <main class="main-container">
 
 
         <!-- HERO -->
@@ -612,130 +765,26 @@
             </span>
 
             <h1>
-                Салом! 👋
+                Салом!
             </h1>
 
             <p>
-                Устои лозиматро пайдо кун ва кори худро
-                зуд фармоиш деҳ.
+                Устои лозиматро зуд пайдо кун.
             </p>
 
-        </section>
 
+            <!-- ҶУСТУҶӮ -->
 
-        <!-- ACTIONS -->
-
-        <section class="action-grid">
-
-
-            <button
-                id="findWorkerButton"
-                class="action-card blue"
-                type="button"
-            >
-
-                <span class="action-icon">
-                    🔎
-                </span>
-
-                <strong>
-                    Усто ҷустуҷӯ кардан
-                </strong>
-
-                <small>
-                    Устои лозиматро пайдо кун
-                </small>
-
-            </button>
-
-
-            <button
-                id="ordersButton"
-                class="action-card purple"
-                type="button"
-            >
-
-                <span class="action-icon">
-                    📦
-                </span>
-
-                <strong>
-                    Фармоишҳои ман
-                </strong>
-
-                <small>
-                    Фармоишҳои худро бин
-                </small>
-
-            </button>
-
-
-            <button
-                id="profileButton"
-                class="action-card green"
-                type="button"
-            >
-
-                <span class="action-icon">
-                    👤
-                </span>
-
-                <strong>
-                    Профили ман
-                </strong>
-
-                <small>
-                    Маълумоти худро бин
-                </small>
-
-            </button>
-
-        </section>
-
-
-        <!-- SEARCH -->
-
-        <section
-            id="searchPanel"
-            class="glass-panel"
-        >
-
-            <div class="panel-title">
-
-                <span class="panel-icon">
-                    🔎
-                </span>
-
-                <div>
-
-                    <small>
-                        ҶУСТУҶӮ
-                    </small>
-
-                    <h2>
-                        Устои лозиматро ёб
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="search-row">
+            <div class="search-box">
 
                 <input
                     id="searchInput"
-                    name="search"
-                    autocomplete="off"
-                    enterkeyhint="search"
-                    aria-label="Ҷустуҷӯи усто аз рӯи ном, касб ё шаҳр"
-                    type="text"
-                    placeholder="Ном, касб ё шаҳр..."
+                    type="search"
+                    placeholder="🔎 Номи усто ё касбро навис..."
                 >
 
                 <button
                     id="searchButton"
-                    aria-label="Ҷустуҷӯи усто"
                     type="button"
                 >
                     Ҷустуҷӯ
@@ -743,27 +792,38 @@
 
             </div>
 
+            <div
+                id="searchPanel"
+                class="search-panel hidden"
+            ></div>
+
         </section>
 
 
-        <!-- CATEGORIES -->
+
+        <!-- КАТЕГОРИЯҲО -->
 
         <section class="section">
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <span>
-                    🔥 КАТЕГОРИЯҲО
-                </span>
+                <div>
 
-                <h2>
-                    Кори лозимаро интихоб кун
-                </h2>
+                    <span>
+                        🛠️ КАТЕГОРИЯҲО
+                    </span>
+
+                    <h2>
+                        Касби лозимаро интихоб кунед
+                    </h2>
+
+                </div>
 
             </div>
 
 
             <div class="category-grid">
+
 
                 <button
                     data-category="Устои мошин"
@@ -782,7 +842,7 @@
                 >
                     ⚡
                     <small>
-                        Барқ
+                        Барқчӣ
                     </small>
                 </button>
 
@@ -857,7 +917,8 @@
         </section>
 
 
-        <!-- WORKERS -->
+
+        <!-- УСТОҲО -->
 
         <section class="section">
 
@@ -874,6 +935,7 @@
                     </h2>
 
                 </div>
+
 
                 <div
                     id="workerCount"
@@ -937,7 +999,27 @@
 
         <div class="header-actions">
 
-            <span class="role-badge worker-badge">
+
+            <div class="language-box">
+
+                <button
+                    id="workerLanguageButton"
+                    class="language-button"
+                    type="button"
+                >
+                    🌐
+                    <span id="workerCurrentLanguage">
+                        TJ
+                    </span>
+                    ▾
+                </button>
+
+            </div>
+
+
+            <span
+                class="role-badge worker-badge"
+            >
                 🛠️ Усто
             </span>
 
@@ -955,31 +1037,38 @@
     </header>
 
 
-    <main id="worker-main-content" class="main-container">
 
+    <main class="main-container">
+
+
+        <!-- HERO УСТО -->
 
         <section class="worker-hero">
 
             <div
                 id="workerHeroIcon"
-                class="worker-big-icon"
+                class="worker-hero-icon"
             >
                 🛠️
             </div>
 
 
-            <div>
+            <div class="worker-hero-content">
 
-                <span class="eyebrow green-text">
-                    🟢 ПРОФИЛИ УСТО
+                <span>
+                    🛠️ ПРОФИЛИ УСТО
                 </span>
 
-                <h1 id="workerHeroName">
-                    Усто
+                <h1
+                    id="workerHeroName"
+                >
+                    —
                 </h1>
 
-                <p id="workerHeroProfession">
-                    Касб
+                <p
+                    id="workerHeroProfession"
+                >
+                    —
                 </p>
 
             </div>
@@ -987,58 +1076,65 @@
         </section>
 
 
-        <!-- STATISTICS -->
 
-        <section class="stats-grid">
+        <!-- СТАТИСТИКА -->
 
-
-            <div class="stat">
-
-                <span>
-                    📦
-                </span>
-
-                <strong id="pendingCount">
-                    0
-                </strong>
-
-                <small>
-                    Фармоишҳои нав
-                </small>
-
-            </div>
+        <section class="worker-stats">
 
 
-            <div class="stat">
+            <div class="stat-card">
 
                 <span>
                     ⭐
                 </span>
 
-                <strong>
-                    5.0
-                </strong>
-
                 <small>
-                    Рейтинг
+                    Таҷриба
                 </small>
+
+                <strong
+                    id="experienceStat"
+                >
+                    —
+                </strong>
 
             </div>
 
 
-            <div class="stat">
+            <div class="stat-card">
 
                 <span>
-                    ⏱️
+                    📦
                 </span>
 
-                <strong id="experienceStat">
+                <small>
+                    Фармоишҳо
+                </small>
+
+                <strong
+                    id="workerOrderStat"
+                >
                     0
                 </strong>
 
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    ⏳
+                </span>
+
                 <small>
-                    Таҷриба
+                    Интизорӣ
                 </small>
+
+                <strong
+                    id="pendingCount"
+                >
+                    0
+                </strong>
 
             </div>
 
@@ -1046,30 +1142,10 @@
         </section>
 
 
-        <!-- PROFILE -->
 
-        <section class="glass-panel">
+        <!-- ПРОФИЛ -->
 
-            <div class="panel-title">
-
-                <span class="panel-icon">
-                    👤
-                </span>
-
-                <div>
-
-                    <small>
-                        ПРОФИЛ
-                    </small>
-
-                    <h2>
-                        Маълумоти ман
-                    </h2>
-
-                </div>
-
-            </div>
-
+        <section class="section">
 
             <div
                 id="workerProfileInfo"
@@ -1080,21 +1156,18 @@
         </section>
 
 
-        <!-- ORDERS -->
 
-        <section class="glass-panel">
+        <!-- ФАРМОИШҲО -->
 
-            <div class="panel-title">
+        <section class="section">
 
-                <span class="panel-icon">
-                    📦
-                </span>
+            <div class="workers-head">
 
                 <div>
 
-                    <small>
-                        ФАРМОИШҲО
-                    </small>
+                    <span>
+                        📦 ФАРМОИШҲО
+                    </span>
 
                     <h2>
                         Фармоишҳои мизоҷон
@@ -1113,7 +1186,7 @@
 
 
             <div
-                id="emptyOrders"
+                id="emptyWorkerOrders"
                 class="empty-box"
             >
 
@@ -1251,54 +1324,98 @@
             📦
         </div>
 
+
         <h2>
             Фармоиш додан
         </h2>
 
-        <p id="orderWorkerTitle">
-            Ба усто фармоиш диҳед
+
+        <p
+            id="orderWorkerTitle"
+        >
+            Фармоиш ба усто
         </p>
 
 
-        <input
-            id="customerName"
-            name="name"
-            autocomplete="name"
-            type="text"
-            placeholder="👤 Номи шумо"
-        >
+
+        <!-- НОМИ МИЗОҶ -->
+
+        <div class="form-group">
+
+            <label for="customerName">
+                👤 Ном
+            </label>
+
+            <input
+                id="customerName"
+                type="text"
+                placeholder="Номи шумо"
+            >
+
+        </div>
 
 
-        <input
-            id="customerPhone"
-            name="tel"
-            autocomplete="tel"
-            type="tel"
-            placeholder="📞 Рақами телефон"
-        >
+
+        <!-- ТЕЛЕФОН -->
+
+        <div class="form-group">
+
+            <label for="customerPhone">
+                📞 Телефон
+            </label>
+
+            <input
+                id="customerPhone"
+                type="tel"
+                placeholder="+992 90 000 00 00"
+            >
+
+        </div>
 
 
-        <input
-            id="orderAddress"
-            name="address"
-            autocomplete="street-address"
-            type="text"
-            placeholder="📍 Суроға"
-        >
+
+        <!-- СУРОҒА -->
+
+        <div class="form-group">
+
+            <label for="orderAddress">
+                📍 Суроға
+            </label>
+
+            <input
+                id="orderAddress"
+                type="text"
+                placeholder="Суроғаи иҷрои кор"
+            >
+
+        </div>
 
 
-        <textarea
-            id="orderDescription"
-            placeholder="📝 Чӣ кор кардан лозим?"
-        ></textarea>
+
+        <!-- ТАВСИФ -->
+
+        <div class="form-group">
+
+            <label for="orderDescription">
+                📝 Тавсифи кор
+            </label>
+
+            <textarea
+                id="orderDescription"
+                rows="5"
+                placeholder="Коратонро шарҳ диҳед..."
+            ></textarea>
+
+        </div>
+
 
 
         <button
             id="sendOrder"
-            class="send-order"
+            class="main-button"
             type="button"
         >
-            🚀 ФАРМОИШРО ФИРИСТОДАН
+            📤 ФАРМОИШРО ФИРИСТОДАН
         </button>
 
     </div>
@@ -1316,7 +1433,7 @@
     class="modal"
 >
 
-    <div class="modal-box cart-box">
+    <div class="modal-box cart-modal-box">
 
         <button
             id="closeCart"
@@ -1331,13 +1448,10 @@
             🛒
         </div>
 
+
         <h2>
             Корзина
         </h2>
-
-        <p>
-            Устоҳои интихобкардаи шумо
-        </p>
 
 
         <div
@@ -1361,7 +1475,7 @@
             </h3>
 
             <p>
-                Усторо ба корзина илова кун.
+                Устоҳои лозимаро ба корзина илова кунед.
             </p>
 
         </div>
@@ -1396,9 +1510,11 @@
             👤
         </div>
 
+
         <h2>
             Профили ман
         </h2>
+
 
         <div
             id="customerProfile"
@@ -1412,7 +1528,26 @@
 
 
 
-<script src="idris.js" defer></script>
+<!-- =====================================================
+     GOOGLE LOGIN
+===================================================== -->
+
+<script
+    src="https://accounts.google.com/gsi/client"
+    async
+    defer
+></script>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script
+    src="idris.js"
+></script>
+
 
 </body>
 </html>
