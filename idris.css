@@ -1,1553 +1,2536 @@
-<!DOCTYPE html>
-<html lang="tg">
+/* =====================================================
+   USTOYOB PREMIUM CSS
+===================================================== */
 
-<head>
-    <meta charset="UTF-8">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+html {
+    scroll-behavior: smooth;
+}
 
-    <title>
-        USTOYOB | Устои худро пайдо кун
-    </title>
+body {
+    min-height: 100vh;
 
-    <link
-        rel="stylesheet"
-        href="idris.css"
-    >
-</head>
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-<body>
+    color: #ffffff;
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(0, 125, 255, .18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(0, 80, 255, .13),
+            transparent 30%
+        ),
+        #03070c;
 
-<div class="bg-light light-1"></div>
-<div class="bg-light light-2"></div>
-<div class="bg-light light-3"></div>
+    overflow-x: hidden;
+}
 
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
 
-<!-- =====================================================
-     САҲИФАИ ИНТИХОБИ НАКШ
-===================================================== -->
+button {
+    -webkit-tap-highlight-color: transparent;
+}
 
-<section
-    id="welcomePage"
-    class="screen welcome-screen"
->
 
-    <div class="welcome-card">
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
-        <div class="shine"></div>
+.bg-light {
+    position: fixed;
 
-        <div class="logo-box">
-            🛠️
-        </div>
+    width: 350px;
+    height: 350px;
 
-        <div class="brand">
-            USTOYOB
-        </div>
+    border-radius: 50%;
 
-        <div class="blue-line"></div>
+    filter: blur(120px);
 
-        <p class="tagline">
-            Устои лозиматро зуд пайдо кун!
-        </p>
+    opacity: .16;
 
-        <div class="divider"></div>
+    pointer-events: none;
 
-        <h1>
-            Шумо кӣ ҳастед?
-        </h1>
+    z-index: -1;
+}
 
-        <p class="sub-text">
-            Барои оғоз нақши худро интихоб кунед
-        </p>
+.light-1 {
+    top: -170px;
+    left: -150px;
 
+    background: #008cff;
+}
 
-        <!-- МИЗОҶ -->
+.light-2 {
+    right: -170px;
+    top: 35%;
 
-        <button
-            id="customerButton"
-            class="role-button customer-role"
-            type="button"
-        >
+    background: #0055ff;
+}
 
-            <span class="role-icon">
-                👤
-            </span>
+.light-3 {
+    bottom: -180px;
+    left: 35%;
 
-            <span class="role-content">
+    background: #00d5ff;
+}
 
-                <strong>
-                    МАН МИЗОҶ ҲАСТАМ
-                </strong>
 
-                <small>
-                    Усто меҷӯям
-                </small>
+/* =====================================================
+   COMMON
+===================================================== */
 
-            </span>
+.hidden {
+    display: none !important;
+}
 
-            <span class="role-arrow">
-                →
-            </span>
+.screen {
+    min-height: 100vh;
 
-        </button>
+    display: flex;
 
+    justify-content: center;
+    align-items: center;
 
-        <!-- УСТО -->
+    padding: 30px 20px;
+}
 
-        <button
-            id="workerButton"
-            class="role-button worker-role"
-            type="button"
-        >
 
-            <span class="role-icon">
-                🛠️
-            </span>
+/* =====================================================
+   WELCOME
+===================================================== */
 
-            <span class="role-content">
+.welcome-screen {
+    min-height: 100vh;
+}
 
-                <strong>
-                    МАН УСТО ҲАСТАМ
-                </strong>
+.welcome-card {
+    position: relative;
 
-                <small>
-                    Хизмат мерасонам
-                </small>
+    width: 100%;
+    max-width: 550px;
 
-            </span>
+    padding: 48px 40px;
 
-            <span class="role-arrow">
-                →
-            </span>
+    overflow: hidden;
 
-        </button>
+    text-align: center;
 
+    border: 1px solid rgba(50, 165, 255, .28);
 
-        <div class="security">
+    border-radius: 32px;
 
-            <span>
-                🔒
-            </span>
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 28, 42, .97),
+            rgba(3, 8, 14, .97)
+        );
 
-            <span>
-                Маълумоти шумо ҳифз карда мешавад
-            </span>
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.65),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
 
-        </div>
+.shine {
+    position: absolute;
 
-    </div>
+    top: -120px;
+    left: -500px;
 
-</section>
+    width: 650px;
+    height: 170px;
 
+    transform: rotate(-25deg);
 
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.14),
+            transparent
+        );
 
-<!-- =====================================================
-     САҲИФАИ ИНТИХОБИ КАСБ
-===================================================== -->
+    filter: blur(8px);
 
-<section
-    id="professionPage"
-    class="screen hidden profession-screen"
->
+    animation: shine 7s infinite;
+}
 
-    <div class="page-container">
+@keyframes shine {
 
-        <div class="top-page">
+    0% {
+        left: -550px;
+    }
 
-            <button
-                id="professionBack"
-                class="back-button"
-                type="button"
-            >
-                ← Бозгашт
-            </button>
+    55% {
+        left: 650px;
+    }
 
-            <div class="page-title">
+    100% {
+        left: 850px;
+    }
+}
 
-                <div class="page-icon">
-                    🛠️
-                </div>
+.logo-box {
+    width: 92px;
+    height: 92px;
 
-                <div>
+    margin: auto;
 
-                    <h1>
-                        Касби худро интихоб кунед
-                    </h1>
+    display: flex;
 
-                    <p>
-                        Касберо интихоб кунед,
-                        ки шумо дар он кор мекунед
-                    </p>
+    align-items: center;
+    justify-content: center;
 
-                </div>
+    border-radius: 26px;
 
-            </div>
+    border: 1px solid #168ed9;
 
-        </div>
+    background:
+        linear-gradient(
+            145deg,
+            #0c6397,
+            #041421
+        );
 
+    font-size: 45px;
 
-        <!-- КАСБҲО -->
+    box-shadow:
+        0 0 40px rgba(0,140,255,.15),
+        inset 0 1px 0 rgba(255,255,255,.22);
+}
 
-        <div class="profession-grid">
+.brand {
+    margin-top: 17px;
 
+    font-size: 35px;
 
-            <!-- УСТОИ МОШИН -->
+    font-weight: 900;
 
-            <button
-                class="profession-card"
-                data-profession="Устои мошин"
-                data-icon="🚗"
-                type="button"
-            >
+    letter-spacing: 2px;
+}
 
-                <span class="profession-icon">
-                    🚗
-                </span>
+.blue-line {
+    width: 65px;
+    height: 4px;
 
-                <strong>
-                    Устои мошин
-                </strong>
+    margin: 12px auto;
 
-                <small>
-                    Таъмири мошин
-                </small>
+    border-radius: 20px;
 
-            </button>
+    background:
+        linear-gradient(
+            90deg,
+            #0784df,
+            #64ccff
+        );
 
+    box-shadow:
+        0 0 20px rgba(0,140,255,.45);
+}
 
+.tagline {
+    color: #8493a2;
 
-            <!-- БАРҚЧӢ -->
+    font-size: 14px;
+}
 
-            <button
-                class="profession-card"
-                data-profession="Барқчӣ"
-                data-icon="⚡"
-                type="button"
-            >
+.divider {
+    height: 1px;
 
-                <span class="profession-icon">
-                    ⚡
-                </span>
+    margin: 28px 0;
 
-                <strong>
-                    Барқчӣ
-                </strong>
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent
+        );
+}
 
-                <small>
-                    Корҳои барқӣ
-                </small>
+.welcome-card h1 {
+    font-size: 28px;
+}
 
-            </button>
+.sub-text {
+    margin-top: 8px;
 
+    color: #6f7e8c;
 
+    font-size: 13px;
+}
 
-            <!-- САНТЕХНИК -->
 
-            <button
-                class="profession-card"
-                data-profession="Сантехник"
-                data-icon="🚿"
-                type="button"
-            >
+/* =====================================================
+   ROLE BUTTON
+===================================================== */
 
-                <span class="profession-icon">
-                    🚿
-                </span>
+.role-button {
+    position: relative;
 
-                <strong>
-                    Сантехник
-                </strong>
+    width: 100%;
 
-                <small>
-                    Об ва қубур
-                </small>
+    min-height: 92px;
 
-            </button>
+    display: flex;
 
+    align-items: center;
 
+    gap: 15px;
 
-            <!-- УСТОИ ТЕЛЕФОН -->
+    margin-top: 15px;
 
-            <button
-                class="profession-card"
-                data-profession="Устои телефон"
-                data-icon="📱"
-                type="button"
-            >
+    padding: 17px;
 
-                <span class="profession-icon">
-                    📱
-                </span>
+    text-align: left;
 
-                <strong>
-                    Устои телефон
-                </strong>
+    color: white;
 
-                <small>
-                    Таъмири телефон
-                </small>
+    border-radius: 18px;
 
-            </button>
+    cursor: pointer;
 
+    overflow: hidden;
 
+    transition: .3s;
+}
 
-            <!-- СОХТМОН -->
+.role-button::after {
+    content: "";
 
-            <button
-                class="profession-card"
-                data-profession="Сохтмон"
-                data-icon="🧱"
-                type="button"
-            >
+    position: absolute;
 
-                <span class="profession-icon">
-                    🧱
-                </span>
+    top: 0;
+    left: -120%;
 
-                <strong>
-                    Сохтмон
-                </strong>
+    width: 70%;
+    height: 100%;
 
-                <small>
-                    Корҳои сохтмонӣ
-                </small>
+    transform: skewX(-25deg);
 
-            </button>
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.13),
+            transparent
+        );
 
+    transition: .7s;
+}
 
+.role-button:hover::after {
+    left: 130%;
+}
 
-            <!-- МЕБЕЛСОЗ -->
+.customer-role {
+    border: 1px solid rgba(20,150,255,.45);
 
-            <button
-                class="profession-card"
-                data-profession="Мебелсоз"
-                data-icon="🪑"
-                type="button"
-            >
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0,130,235,.17),
+            rgba(5,15,25,.85)
+        );
+}
 
-                <span class="profession-icon">
-                    🪑
-                </span>
+.worker-role {
+    border: 1px solid rgba(35,215,145,.3);
 
-                <strong>
-                    Мебелсоз
-                </strong>
+    background:
+        linear-gradient(
+            120deg,
+            rgba(20,170,110,.13),
+            rgba(5,18,14,.85)
+        );
+}
 
-                <small>
-                    Сохтани мебел
-                </small>
+.role-button:hover {
+    transform: translateY(-5px);
+}
 
-            </button>
+.customer-role:hover {
+    border-color: #1597ff;
 
+    box-shadow:
+        0 18px 45px rgba(0,130,255,.16);
+}
 
+.worker-role:hover {
+    border-color: #27db94;
 
-            <!-- РАНГУБОРЧӢ -->
+    box-shadow:
+        0 18px 45px rgba(0,210,130,.12);
+}
 
-            <button
-                class="profession-card"
-                data-profession="Рангуборчӣ"
-                data-icon="🎨"
-                type="button"
-            >
+.role-icon {
+    width: 52px;
+    height: 52px;
 
-                <span class="profession-icon">
-                    🎨
-                </span>
+    flex-shrink: 0;
 
-                <strong>
-                    Рангуборчӣ
-                </strong>
+    display: flex;
 
-                <small>
-                    Рангубор
-                </small>
+    align-items: center;
+    justify-content: center;
 
-            </button>
+    border-radius: 15px;
 
+    background: rgba(255,255,255,.06);
 
+    font-size: 26px;
+}
 
-            <!-- КОНДИЦИОНЕР -->
+.role-content {
+    flex: 1;
 
-            <button
-                class="profession-card"
-                data-profession="Устои кондиционер"
-                data-icon="❄️"
-                type="button"
-            >
+    display: flex;
 
-                <span class="profession-icon">
-                    ❄️
-                </span>
+    flex-direction: column;
 
-                <strong>
-                    Устои кондиционер
-                </strong>
+    gap: 5px;
+}
 
-                <small>
-                    Таъмири кондиционер
-                </small>
+.role-content strong {
+    font-size: 14px;
+}
 
-            </button>
+.role-content small {
+    color: #7b8a98;
 
-        </div>
+    font-size: 12px;
+}
 
-    </div>
+.role-arrow {
+    color: #738290;
 
-</section>
+    font-size: 28px;
 
+    transition: .25s;
+}
 
+.role-button:hover .role-arrow {
+    color: white;
 
-<!-- =====================================================
-     САҲИФАИ СОХТАНИ ПРОФИЛИ УСТО
-===================================================== -->
+    transform: translateX(5px);
+}
 
-<section
-    id="workerFormPage"
-    class="screen hidden"
->
+.security {
+    margin-top: 25px;
 
-    <div class="form-container">
+    color: #53616e;
 
-        <button
-            id="workerFormBack"
-            class="back-button"
-            type="button"
-        >
-            ← Бозгашт
-        </button>
+    font-size: 11px;
+}
 
 
-        <div class="form-card">
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
-            <div
-                id="chosenProfessionIcon"
-                class="chosen-profession-icon"
-            >
-                🛠️
-            </div>
+.back-btn {
+    padding: 10px 15px;
 
-            <h1>
-                Профили усто
-            </h1>
+    border: 1px solid #263947;
 
-            <p class="form-subtitle">
-                Маълумоти худро ворид кунед
-            </p>
+    border-radius: 11px;
 
+    background: #09121a;
 
-            <!-- КАСБ -->
+    color: #94a3af;
 
-            <div class="chosen-profession">
+    cursor: pointer;
 
-                <span>
-                    Касб:
-                </span>
+    transition: .25s;
+}
 
-                <strong
-                    id="chosenProfessionText"
-                >
-                    —
-                </strong>
+.back-btn:hover {
+    color: white;
 
-            </div>
+    background: #087fe0;
 
+    border-color: #1597ff;
+}
 
-            <!-- НОМ -->
 
-            <div class="form-group">
+/* =====================================================
+   PROFESSION
+===================================================== */
 
-                <label for="workerName">
-                    👤 Ном ва насаб
-                </label>
+.profession-container {
+    width: 100%;
+    max-width: 900px;
 
-                <input
-                    id="workerName"
-                    type="text"
-                    placeholder="Мисол: Абдулло Саидов"
-                >
+    padding: 35px;
 
-            </div>
+    border: 1px solid rgba(60,170,240,.22);
 
+    border-radius: 30px;
 
-            <!-- ТЕЛЕФОН -->
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,27,40,.97),
+            rgba(3,8,13,.97)
+        );
 
-            <div class="form-group">
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.55);
+}
 
-                <label for="workerPhone">
-                    📞 Рақами телефон
-                </label>
+.profession-head {
+    text-align: center;
 
-                <input
-                    id="workerPhone"
-                    type="tel"
-                    placeholder="+992 90 000 00 00"
-                >
+    margin: 25px 0 30px;
+}
 
-            </div>
+.small-logo {
+    width: 70px;
+    height: 70px;
 
+    margin: auto auto 15px;
 
-            <!-- ҶОЙ -->
+    display: flex;
 
-            <div class="form-group">
+    align-items: center;
+    justify-content: center;
 
-                <label for="workerLocation">
-                    📍 Шаҳр / ноҳия
-                </label>
+    border-radius: 20px;
 
-                <input
-                    id="workerLocation"
-                    type="text"
-                    placeholder="Мисол: Душанбе"
-                >
+    border: 1px solid #1597ff;
 
-            </div>
+    background:
+        linear-gradient(
+            145deg,
+            #0a6192,
+            #04131e
+        );
 
+    font-size: 34px;
+}
 
-            <!-- ТАҶРИБА -->
+.step-label {
+    color: #1597ff;
 
-            <div class="form-group">
+    font-size: 10px;
 
-                <label for="workerExperience">
-                    ⭐ Таҷриба
-                </label>
+    font-weight: 900;
 
-                <input
-                    id="workerExperience"
-                    type="text"
-                    placeholder="Мисол: 5 сол"
-                >
+    letter-spacing: 1px;
+}
 
-            </div>
+.profession-head h1 {
+    margin-top: 8px;
 
+    font-size: 32px;
+}
 
-            <!-- ДАР БОРАИ УСТО -->
+.profession-head p {
+    margin-top: 8px;
 
-            <div class="form-group">
+    color: #72808e;
+}
 
-                <label for="workerAbout">
-                    📝 Дар бораи худ
-                </label>
+.profession-grid {
+    display: grid;
 
-                <textarea
-                    id="workerAbout"
-                    rows="5"
-                    placeholder="Дар бораи хизматрасонии худ нависед..."
-                ></textarea>
+    grid-template-columns:
+        repeat(4, 1fr);
 
-            </div>
+    gap: 13px;
+}
 
+.profession-card {
+    min-height: 155px;
 
-            <!-- СОХТАН -->
+    padding: 20px 12px;
 
-            <button
-                id="createWorker"
-                class="main-button"
-                type="button"
-            >
-                ✨ ПРОФИЛРО СОХТАН
-            </button>
+    display: flex;
 
-        </div>
+    flex-direction: column;
 
-    </div>
+    align-items: center;
+    justify-content: center;
 
-</section>
+    border: 1px solid #233440;
 
+    border-radius: 18px;
 
+    background:
+        linear-gradient(
+            145deg,
+            #101b25,
+            #080d13
+        );
 
-<!-- =====================================================
-     DASHBOARD МИЗОҶ
-===================================================== -->
+    color: white;
 
-<section
-    id="customerPage"
-    class="dashboard hidden"
->
+    cursor: pointer;
 
-    <header class="header">
+    transition: .3s;
+}
 
-        <div class="header-logo">
-            🛠️ USTOYOB
-        </div>
+.profession-card > span {
+    font-size: 35px;
 
+    margin-bottom: 14px;
+}
 
-        <div class="header-actions">
+.profession-card strong {
+    font-size: 13px;
+}
 
+.profession-card small {
+    margin-top: 7px;
 
-            <!-- ЗАБОНИ САЙТ -->
+    color: #6e7c89;
 
-            <div class="language-box">
+    font-size: 10px;
+}
 
-                <button
-                    id="languageButton"
-                    class="language-button"
-                    type="button"
-                >
-                    🌐
-                    <span id="currentLanguage">
-                        TJ
-                    </span>
-                    ▾
-                </button>
+.profession-card:hover {
+    transform: translateY(-6px);
 
+    border-color: #1597ff;
 
-                <div
-                    id="languageMenu"
-                    class="language-menu hidden"
-                >
+    background:
+        linear-gradient(
+            145deg,
+            #10314b,
+            #07121c
+        );
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="ru"
-                    >
-                        🇷🇺 Русский
-                    </button>
+    box-shadow:
+        0 20px 45px rgba(0,120,255,.14);
+}
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="tg"
-                    >
-                        🇹🇯 Тоҷикӣ
-                    </button>
+.hint {
+    margin-top: 25px;
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="uz"
-                    >
-                        🇺🇿 O‘zbekcha
-                    </button>
+    text-align: center;
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="kk"
-                    >
-                        🇰🇿 Қазақша
-                    </button>
+    color: #566674;
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="ky"
-                    >
-                        🇰🇬 Кыргызча
-                    </button>
+    font-size: 11px;
+}
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="az"
-                    >
-                        🇦🇿 Azərbaycan dili
-                    </button>
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="hy"
-                    >
-                        🇦🇲 Հայերեն
-                    </button>
+/* =====================================================
+   WORKER FORM
+===================================================== */
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="be"
-                    >
-                        🇧🇾 Беларуская
-                    </button>
+.worker-form-container {
+    width: 100%;
+    max-width: 760px;
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="tk"
-                    >
-                        🇹🇲 Türkmençe
-                    </button>
+    padding: 35px;
 
-                    <button
-                        type="button"
-                        class="language-option"
-                        data-lang="ro"
-                    >
-                        🇲🇩 Română
-                    </button>
+    border: 1px solid rgba(60,170,240,.22);
 
-                </div>
+    border-radius: 30px;
 
-            </div>
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,27,40,.97),
+            rgba(3,8,13,.97)
+        );
 
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.55);
+}
 
+.form-title {
+    text-align: center;
 
-            <!-- КОРЗИНА -->
+    margin: 25px 0 30px;
+}
 
-            <button
-                id="cartButton"
-                class="header-btn cart-btn"
-                type="button"
-            >
+.chosen-icon {
+    width: 70px;
+    height: 70px;
 
-                🛒 Корзина
+    margin: auto auto 15px;
 
-                <b id="cartCount">
-                    0
-                </b>
+    display: flex;
 
-            </button>
+    align-items: center;
+    justify-content: center;
 
+    border-radius: 20px;
 
+    border: 1px solid #1597ff;
 
-            <!-- РЕГИСТРАТСИЯ -->
+    background:
+        linear-gradient(
+            145deg,
+            #0a6192,
+            #04131e
+        );
 
-            <button
-                id="registerButton"
-                class="header-btn"
-                type="button"
-            >
-                👤 Регистрация
-            </button>
+    font-size: 34px;
+}
 
+.form-title h1 {
+    margin-top: 8px;
 
+    font-size: 29px;
+}
 
-            <!-- ПРОФИЛ -->
+.form-title p {
+    margin-top: 6px;
 
-            <button
-                id="profileButton"
-                class="header-btn"
-                type="button"
-            >
-                👤 Профил
-            </button>
+    color: #32aaff;
 
+    font-weight: 700;
+}
 
+.form-grid {
+    display: grid;
 
-            <span class="role-badge">
-                👤 Мизоҷ
-            </span>
+    grid-template-columns:
+        repeat(2, 1fr);
 
+    gap: 15px;
+}
 
+.input-box {
+    display: flex;
 
-            <!-- БАРОМАД -->
+    flex-direction: column;
 
-            <button
-                id="customerLogout"
-                class="header-btn exit-btn"
-                type="button"
-            >
-                ← Баромадан
-            </button>
+    gap: 8px;
+}
 
-        </div>
+.input-box.full {
+    grid-column: 1 / -1;
+}
 
-    </header>
+.input-box label {
+    color: #a8b5c0;
 
+    font-size: 12px;
+}
 
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
 
-    <main class="main-container">
+    padding: 14px;
 
+    outline: none;
 
-        <!-- HERO -->
+    border: 1px solid #253744;
 
-        <section class="dashboard-hero">
+    border-radius: 12px;
 
-            <span class="eyebrow">
-                👤 ҲИСОБИ МИЗОҶ
-            </span>
+    background:
+        linear-gradient(
+            145deg,
+            #0b131b,
+            #060b10
+        );
 
-            <h1>
-                Салом!
-            </h1>
+    color: white;
 
-            <p>
-                Устои лозиматро зуд пайдо кун.
-            </p>
+    transition: .25s;
+}
 
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+    border-color: #1597ff;
 
-            <!-- ҶУСТУҶӮ -->
+    box-shadow:
+        0 0 20px rgba(0,130,255,.08);
+}
 
-            <div class="search-box">
+.input-box textarea {
+    min-height: 120px;
 
-                <input
-                    id="searchInput"
-                    type="search"
-                    placeholder="🔎 Номи усто ё касбро навис..."
-                >
+    resize: vertical;
+}
 
-                <button
-                    id="searchButton"
-                    type="button"
-                >
-                    Ҷустуҷӯ
-                </button>
+.main-submit {
+    width: 100%;
 
-            </div>
+    margin-top: 22px;
 
-            <div
-                id="searchPanel"
-                class="search-panel hidden"
-            ></div>
+    padding: 16px;
 
-        </section>
+    border: 1px solid #44baff;
 
+    border-radius: 13px;
 
+    background:
+        linear-gradient(
+            135deg,
+            #0b91e8,
+            #0759c7
+        );
 
-        <!-- КАТЕГОРИЯҲО -->
+    color: white;
 
-        <section class="section">
+    font-weight: 900;
 
-            <div class="section-heading">
+    cursor: pointer;
 
-                <div>
+    box-shadow:
+        0 12px 35px rgba(0,120,255,.18);
 
-                    <span>
-                        🛠️ КАТЕГОРИЯҲО
-                    </span>
+    transition: .25s;
+}
 
-                    <h2>
-                        Касби лозимаро интихоб кунед
-                    </h2>
+.main-submit:hover {
+    transform: translateY(-3px);
 
-                </div>
+    box-shadow:
+        0 20px 45px rgba(0,130,255,.27);
+}
 
-            </div>
 
+/* =====================================================
+   DASHBOARD
+===================================================== */
 
-            <div class="category-grid">
+.dashboard {
+    min-height: 100vh;
+}
 
+.header {
+    position: sticky;
 
-                <button
-                    data-category="Устои мошин"
-                    type="button"
-                >
-                    🚗
-                    <small>
-                        Мошин
-                    </small>
-                </button>
+    top: 0;
 
+    z-index: 100;
 
-                <button
-                    data-category="Барқчӣ"
-                    type="button"
-                >
-                    ⚡
-                    <small>
-                        Барқчӣ
-                    </small>
-                </button>
+    min-height: 74px;
 
+    display: flex;
 
-                <button
-                    data-category="Сантехник"
-                    type="button"
-                >
-                    🚿
-                    <small>
-                        Сантехник
-                    </small>
-                </button>
+    align-items: center;
 
+    justify-content: space-between;
 
-                <button
-                    data-category="Устои телефон"
-                    type="button"
-                >
-                    📱
-                    <small>
-                        Телефон
-                    </small>
-                </button>
+    padding: 0 5%;
 
+    border-bottom: 1px solid rgba(255,255,255,.07);
 
-                <button
-                    data-category="Сохтмон"
-                    type="button"
-                >
-                    🧱
-                    <small>
-                        Сохтмон
-                    </small>
-                </button>
+    background:
+        rgba(3,8,14,.82);
 
+    backdrop-filter: blur(20px);
+}
 
-                <button
-                    data-category="Мебелсоз"
-                    type="button"
-                >
-                    🪑
-                    <small>
-                        Мебел
-                    </small>
-                </button>
+.header-logo {
+    color: #1597ff;
 
+    font-size: 22px;
 
-                <button
-                    data-category="Рангуборчӣ"
-                    type="button"
-                >
-                    🎨
-                    <small>
-                        Рангубор
-                    </small>
-                </button>
+    font-weight: 900;
+}
 
+.header-actions {
+    display: flex;
 
-                <button
-                    data-category="Устои кондиционер"
-                    type="button"
-                >
-                    ❄️
-                    <small>
-                        Кондиционер
-                    </small>
-                </button>
+    align-items: center;
 
-            </div>
+    gap: 8px;
+}
 
-        </section>
+.header-btn {
+    min-height: 39px;
 
+    padding: 0 12px;
 
+    border-radius: 10px;
 
-        <!-- УСТОҲО -->
+    border: 1px solid #263744;
 
-        <section class="section">
+    background: #09121a;
 
-            <div class="workers-head">
+    color: #b7c2cc;
 
-                <div>
+    cursor: pointer;
 
-                    <span>
-                        👨‍🔧 USTOYOB
-                    </span>
+    font-size: 11px;
 
-                    <h2>
-                        Устоҳои дастрас
-                    </h2>
+    font-weight: 800;
 
-                </div>
+    transition: .25s;
+}
 
+.header-btn:hover {
+    color: white;
 
-                <div
-                    id="workerCount"
-                    class="count"
-                >
-                    0 усто
-                </div>
+    border-color: #1597ff;
 
-            </div>
+    background: #087fe0;
+}
 
+.cart-btn {
+    position: relative;
 
-            <div
-                id="workersList"
-                class="workers-list"
-            >
-            </div>
+    color: #ffc44d;
 
+    border-color: rgba(255,190,60,.3);
 
-            <div
-                id="emptyWorkers"
-                class="empty-box"
-            >
+    background: rgba(255,180,40,.06);
+}
 
-                <div>
-                    👨‍🔧
-                </div>
+.cart-btn:hover {
+    background: rgba(255,180,40,.12);
 
-                <h3>
-                    Ҳоло усто нест
-                </h3>
+    border-color: #ffc44d;
 
-                <p>
-                    Усто аввал профили худро созад.
-                </p>
+    color: #ffc44d;
+}
 
-            </div>
+#cartCount {
+    position: absolute;
 
-        </section>
+    top: -8px;
+    right: -7px;
 
-    </main>
+    min-width: 18px;
+    height: 18px;
 
-</section>
+    display: flex;
 
+    align-items: center;
+    justify-content: center;
 
+    border-radius: 50%;
 
-<!-- =====================================================
-     DASHBOARD УСТО
-===================================================== -->
+    background: #ff3c55;
 
-<section
-    id="workerPage"
-    class="dashboard hidden"
->
+    color: white;
 
-    <header class="header">
+    border: 2px solid #05080d;
 
-        <div class="header-logo">
-            🛠️ USTOYOB
-        </div>
+    font-size: 9px;
+}
 
+.role-badge {
+    padding: 8px 12px;
 
-        <div class="header-actions">
+    border: 1px solid rgba(20,150,255,.3);
 
+    border-radius: 30px;
 
-            <div class="language-box">
+    background: rgba(20,150,255,.07);
 
-                <button
-                    id="workerLanguageButton"
-                    class="language-button"
-                    type="button"
-                >
-                    🌐
-                    <span id="workerCurrentLanguage">
-                        TJ
-                    </span>
-                    ▾
-                </button>
+    color: #53b8ff;
 
-            </div>
+    font-size: 10px;
 
+    font-weight: 900;
+}
 
-            <span
-                class="role-badge worker-badge"
-            >
-                🛠️ Усто
-            </span>
+.worker-badge {
+    color: #35df99;
 
+    border-color: rgba(35,220,145,.3);
 
-            <button
-                id="workerLogout"
-                class="header-btn exit-btn"
-                type="button"
-            >
-                ← Баромадан
-            </button>
+    background: rgba(35,220,145,.07);
+}
 
-        </div>
+.main-container {
+    width: 88%;
+    max-width: 1180px;
 
-    </header>
+    margin: auto;
 
+    padding: 65px 0;
+}
 
 
-    <main class="main-container">
+/* =====================================================
+   HERO
+===================================================== */
 
+.dashboard-hero h1,
+.worker-hero h1 {
+    margin-top: 10px;
 
-        <!-- HERO УСТО -->
+    font-size:
+        clamp(38px, 5vw, 62px);
+}
 
-        <section class="worker-hero">
+.dashboard-hero p,
+.worker-hero p {
+    max-width: 700px;
 
-            <div
-                id="workerHeroIcon"
-                class="worker-hero-icon"
-            >
-                🛠️
-            </div>
+    margin-top: 10px;
 
+    color: #81909e;
 
-            <div class="worker-hero-content">
+    font-size: 16px;
 
-                <span>
-                    🛠️ ПРОФИЛИ УСТО
-                </span>
+    line-height: 1.6;
+}
 
-                <h1
-                    id="workerHeroName"
-                >
-                    —
-                </h1>
+.eyebrow {
+    color: #1597ff;
 
-                <p
-                    id="workerHeroProfession"
-                >
-                    —
-                </p>
+    font-size: 10px;
 
-            </div>
+    font-weight: 900;
 
-        </section>
+    letter-spacing: .5px;
+}
 
 
+/* =====================================================
+   ACTION GRID
+===================================================== */
 
-        <!-- СТАТИСТИКА -->
+.action-grid {
+    display: grid;
 
-        <section class="worker-stats">
+    grid-template-columns:
+        repeat(3, 1fr);
 
+    gap: 15px;
 
-            <div class="stat-card">
+    margin-top: 35px;
+}
 
-                <span>
-                    ⭐
-                </span>
+.action-card {
+    min-height: 150px;
 
-                <small>
-                    Таҷриба
-                </small>
+    padding: 25px;
 
-                <strong
-                    id="experienceStat"
-                >
-                    —
-                </strong>
+    display: flex;
 
-            </div>
+    flex-direction: column;
 
+    align-items: flex-start;
 
-            <div class="stat-card">
+    text-align: left;
 
-                <span>
-                    📦
-                </span>
+    border-radius: 20px;
 
-                <small>
-                    Фармоишҳо
-                </small>
+    cursor: pointer;
 
-                <strong
-                    id="workerOrderStat"
-                >
-                    0
-                </strong>
+    transition: .3s;
 
-            </div>
+    color: white;
+}
 
+.action-card:hover {
+    transform: translateY(-6px);
+}
 
-            <div class="stat-card">
+.action-card.blue {
+    border: 1px solid rgba(30,150,255,.35);
 
-                <span>
-                    ⏳
-                </span>
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,120,255,.18),
+            rgba(7,15,23,.95)
+        );
+}
 
-                <small>
-                    Интизорӣ
-                </small>
+.action-card.purple {
+    border: 1px solid rgba(165,100,255,.35);
 
-                <strong
-                    id="pendingCount"
-                >
-                    0
-                </strong>
+    background:
+        linear-gradient(
+            145deg,
+            rgba(130,60,255,.15),
+            rgba(10,8,20,.95)
+        );
+}
 
-            </div>
+.action-card.green {
+    border: 1px solid rgba(30,220,145,.35);
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,180,110,.14),
+            rgba(5,17,13,.95)
+        );
+}
 
-        </section>
+.action-icon {
+    width: 48px;
+    height: 48px;
 
+    display: flex;
 
+    align-items: center;
+    justify-content: center;
 
-        <!-- ПРОФИЛ -->
+    border-radius: 14px;
 
-        <section class="section">
+    background: rgba(255,255,255,.06);
 
-            <div
-                id="workerProfileInfo"
-                class="profile-info"
-            >
-            </div>
+    font-size: 24px;
 
-        </section>
+    margin-bottom: 18px;
+}
 
+.action-card strong {
+    font-size: 14px;
+}
 
+.action-card small {
+    margin-top: 7px;
 
-        <!-- ФАРМОИШҲО -->
+    color: #788794;
 
-        <section class="section">
+    font-size: 11px;
+}
 
-            <div class="workers-head">
 
-                <div>
+/* =====================================================
+   SEARCH
+===================================================== */
 
-                    <span>
-                        📦 ФАРМОИШҲО
-                    </span>
+.glass-panel {
+    margin-top: 25px;
 
-                    <h2>
-                        Фармоишҳои мизоҷон
-                    </h2>
+    padding: 25px;
 
-                </div>
+    border: 1px solid rgba(80,150,220,.18);
 
-            </div>
+    border-radius: 22px;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,24,36,.82),
+            rgba(4,10,16,.82)
+        );
 
-            <div
-                id="workerOrders"
-                class="orders-list"
-            >
-            </div>
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.2);
+}
 
+.panel-title {
+    display: flex;
 
-            <div
-                id="emptyWorkerOrders"
-                class="empty-box"
-            >
+    align-items: center;
 
-                <div>
-                    📭
-                </div>
+    gap: 15px;
 
-                <h3>
-                    Ҳоло фармоиш нест
-                </h3>
+    margin-bottom: 18px;
+}
 
-                <p>
-                    Вақте мизоҷ фармоиш медиҳад,
-                    дар ҳамин ҷо пайдо мешавад.
-                </p>
+.panel-icon {
+    width: 46px;
+    height: 46px;
 
-            </div>
+    display: flex;
 
-        </section>
+    align-items: center;
+    justify-content: center;
 
-    </main>
+    border-radius: 14px;
 
-</section>
+    background: rgba(0,140,255,.1);
 
+    font-size: 22px;
+}
 
+.panel-title small {
+    color: #1597ff;
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+    font-size: 9px;
 
-<footer>
+    font-weight: 900;
+}
 
-    <div>
-        🛠️ USTOYOB
-    </div>
+.panel-title h2 {
+    margin-top: 4px;
 
-    <p>
-        Устои лозиматро зуд пайдо кун!
-    </p>
+    font-size: 19px;
+}
 
-    <small>
-        © 2026 USTOYOB
-    </small>
+.search-row {
+    display: flex;
 
-</footer>
+    gap: 10px;
+}
 
+.search-row input {
+    flex: 1;
 
+    min-height: 48px;
 
-<!-- =====================================================
-     REGISTRATION MODAL
-===================================================== -->
+    padding: 0 16px;
 
-<div
-    id="registrationModal"
-    class="modal"
->
+    outline: none;
 
-    <div class="modal-box">
+    border: 1px solid #273b49;
 
-        <button
-            id="closeRegistration"
-            class="close-modal"
-            type="button"
-        >
-            ×
-        </button>
+    border-radius: 12px;
 
+    background: #071017;
 
-        <div class="modal-icon">
-            👤
-        </div>
+    color: white;
+}
 
-        <h2>
-            Регистрация
-        </h2>
+.search-row input:focus {
+    border-color: #1597ff;
+}
 
-        <p>
-            Роҳи ворид шуданро интихоб кун
-        </p>
+.search-row button {
+    min-width: 120px;
 
+    border: none;
 
-        <button
-            id="googleButton"
-            class="register-button google"
-            type="button"
-        >
-            🔵 Бо Google
-        </button>
+    border-radius: 12px;
 
+    background:
+        linear-gradient(
+            135deg,
+            #078de7,
+            #075ac7
+        );
 
-        <button
-            id="phoneButton"
-            class="register-button phone"
-            type="button"
-        >
-            📞 Бо телефон
-        </button>
+    color: white;
 
+    cursor: pointer;
 
-        <button
-            id="emailButton"
-            class="register-button email"
-            type="button"
-        >
-            📧 Бо Email
-        </button>
+    font-weight: 900;
+}
 
-    </div>
 
-</div>
+/* =====================================================
+   SECTION
+===================================================== */
 
+.section {
+    margin-top: 50px;
+}
 
+.section-title {
+    margin-bottom: 20px;
+}
 
-<!-- =====================================================
-     ORDER MODAL
-===================================================== -->
+.section-title > span {
+    color: #1597ff;
 
-<div
-    id="orderModal"
-    class="modal"
->
+    font-size: 10px;
 
-    <div class="modal-box">
+    font-weight: 900;
+}
 
-        <button
-            id="closeOrder"
-            class="close-modal"
-            type="button"
-        >
-            ×
-        </button>
+.section-title h2 {
+    margin-top: 7px;
 
+    font-size: 27px;
+}
 
-        <div class="modal-icon">
-            📦
-        </div>
+.category-grid {
+    display: grid;
 
+    grid-template-columns:
+        repeat(8, 1fr);
 
-        <h2>
-            Фармоиш додан
-        </h2>
+    gap: 10px;
+}
 
+.category-grid button {
+    min-height: 105px;
 
-        <p
-            id="orderWorkerTitle"
-        >
-            Фармоиш ба усто
-        </p>
+    display: flex;
 
+    flex-direction: column;
 
+    align-items: center;
+    justify-content: center;
 
-        <!-- НОМИ МИЗОҶ -->
+    gap: 9px;
 
-        <div class="form-group">
+    border: 1px solid #21313d;
 
-            <label for="customerName">
-                👤 Ном
-            </label>
+    border-radius: 16px;
 
-            <input
-                id="customerName"
-                type="text"
-                placeholder="Номи шумо"
-            >
+    background:
+        linear-gradient(
+            145deg,
+            #0c161f,
+            #060b10
+        );
 
-        </div>
+    color: white;
 
+    cursor: pointer;
 
+    font-size: 27px;
 
-        <!-- ТЕЛЕФОН -->
+    transition: .25s;
+}
 
-        <div class="form-group">
+.category-grid button:hover {
+    transform: translateY(-4px);
 
-            <label for="customerPhone">
-                📞 Телефон
-            </label>
+    border-color: #1597ff;
 
-            <input
-                id="customerPhone"
-                type="tel"
-                placeholder="+992 90 000 00 00"
-            >
+    background: #0d2435;
+}
 
-        </div>
+.category-grid small {
+    color: #82909c;
 
+    font-size: 10px;
+}
 
 
-        <!-- СУРОҒА -->
+/* =====================================================
+   WORKERS
+===================================================== */
 
-        <div class="form-group">
+.workers-head {
+    display: flex;
 
-            <label for="orderAddress">
-                📍 Суроға
-            </label>
+    align-items: flex-end;
 
-            <input
-                id="orderAddress"
-                type="text"
-                placeholder="Суроғаи иҷрои кор"
-            >
+    justify-content: space-between;
 
-        </div>
+    gap: 15px;
 
+    margin-bottom: 20px;
+}
 
+.workers-head span {
+    color: #1597ff;
 
-        <!-- ТАВСИФ -->
+    font-size: 10px;
 
-        <div class="form-group">
+    font-weight: 900;
+}
 
-            <label for="orderDescription">
-                📝 Тавсифи кор
-            </label>
+.workers-head h2 {
+    margin-top: 6px;
 
-            <textarea
-                id="orderDescription"
-                rows="5"
-                placeholder="Коратонро шарҳ диҳед..."
-            ></textarea>
+    font-size: 27px;
+}
 
-        </div>
+.count {
+    padding: 9px 13px;
 
+    border-radius: 10px;
 
+    background: rgba(20,150,255,.08);
 
-        <button
-            id="sendOrder"
-            class="main-button"
-            type="button"
-        >
-            📤 ФАРМОИШРО ФИРИСТОДАН
-        </button>
+    border: 1px solid rgba(20,150,255,.2);
 
-    </div>
+    color: #55baff;
 
-</div>
+    font-size: 11px;
 
+    font-weight: 900;
+}
 
+.workers-list {
+    display: grid;
 
-<!-- =====================================================
-     CART MODAL
-===================================================== -->
+    grid-template-columns:
+        repeat(3, 1fr);
 
-<div
-    id="cartModal"
-    class="modal"
->
+    gap: 15px;
+}
 
-    <div class="modal-box cart-modal-box">
+.worker-card {
+    position: relative;
 
-        <button
-            id="closeCart"
-            class="close-modal"
-            type="button"
-        >
-            ×
-        </button>
+    padding: 22px;
 
+    border: 1px solid #233440;
 
-        <div class="modal-icon">
-            🛒
-        </div>
+    border-radius: 20px;
 
+    background:
+        linear-gradient(
+            145deg,
+            #0d1822,
+            #060b10
+        );
 
-        <h2>
-            Корзина
-        </h2>
+    transition: .3s;
+}
 
+.worker-card:hover {
+    transform: translateY(-5px);
 
-        <div
-            id="cartItems"
-            class="cart-items"
-        >
-        </div>
+    border-color: #1597ff;
 
+    box-shadow:
+        0 20px 50px rgba(0,120,255,.1);
+}
 
-        <div
-            id="cartEmpty"
-            class="cart-empty"
-        >
+.worker-card-top {
+    display: flex;
 
-            <div>
-                🛒
-            </div>
+    align-items: center;
 
-            <h3>
-                Корзина холӣ аст
-            </h3>
+    gap: 13px;
+}
 
-            <p>
-                Устоҳои лозимаро ба корзина илова кунед.
-            </p>
+.worker-card-icon {
+    width: 55px;
+    height: 55px;
 
-        </div>
+    flex-shrink: 0;
 
-    </div>
+    display: flex;
 
-</div>
+    align-items: center;
+    justify-content: center;
 
+    border-radius: 16px;
 
+    background: rgba(20,150,255,.09);
 
-<!-- =====================================================
-     PROFILE MODAL
-===================================================== -->
+    border: 1px solid rgba(20,150,255,.2);
 
-<div
-    id="profileModal"
-    class="modal"
->
+    font-size: 27px;
+}
 
-    <div class="modal-box">
+.worker-card-name {
+    font-size: 15px;
 
-        <button
-            id="closeProfile"
-            class="close-modal"
-            type="button"
-        >
-            ×
-        </button>
+    font-weight: 900;
+}
 
+.worker-card-profession {
+    margin-top: 4px;
 
-        <div class="modal-icon">
-            👤
-        </div>
+    color: #1597ff;
 
+    font-size: 11px;
 
-        <h2>
-            Профили ман
-        </h2>
+    font-weight: 700;
+}
 
+.worker-info {
+    display: flex;
 
-        <div
-            id="customerProfile"
-            class="customer-profile"
-        >
-        </div>
+    flex-direction: column;
 
-    </div>
+    gap: 8px;
 
-</div>
+    margin-top: 18px;
 
+    padding-top: 15px;
 
+    border-top: 1px solid rgba(255,255,255,.06);
+}
 
-<!-- =====================================================
-     GOOGLE LOGIN
-===================================================== -->
+.worker-info-row {
+    display: flex;
 
-<script
-    src="https://accounts.google.com/gsi/client"
-    async
-    defer
-></script>
+    align-items: center;
 
+    gap: 8px;
 
+    color: #84929e;
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+    font-size: 11px;
+}
 
-<script
-    src="idris.js"
-></script>
+.worker-about {
+    margin-top: 14px;
 
+    color: #7d8a96;
 
-</body>
-</html>
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.worker-card-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.worker-card-actions button {
+    padding: 11px;
+
+    border-radius: 10px;
+
+    border: 1px solid #263744;
+
+    background: #09121a;
+
+    color: #aebac4;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition: .25s;
+}
+
+.worker-card-actions button:hover {
+    color: white;
+
+    background: #087fe0;
+
+    border-color: #1597ff;
+}
+
+.worker-card-actions .order-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #078de7,
+            #075ac7
+        );
+
+    border-color: #1597ff;
+
+    color: white;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-box {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border: 1px dashed #263947;
+
+    border-radius: 20px;
+
+    background: rgba(5,10,15,.5);
+}
+
+.empty-box > div {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.empty-box h3 {
+    font-size: 18px;
+}
+
+.empty-box p {
+    margin-top: 8px;
+
+    color: #687784;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   WORKER HERO
+===================================================== */
+
+.worker-hero {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(35,215,145,.18);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,40,30,.55),
+            rgba(4,10,12,.9)
+        );
+}
+
+.worker-big-icon {
+    width: 100px;
+    height: 100px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(35,220,145,.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,180,110,.15),
+            #07130f
+        );
+
+    font-size: 48px;
+}
+
+.green-text {
+    color: #35df99;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.stat {
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    border: 1px solid #233440;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1821,
+            #070c11
+        );
+}
+
+.stat > span {
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+.stat strong {
+    font-size: 30px;
+}
+
+.stat small {
+    margin-top: 5px;
+
+    color: #758490;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   ORDERS
+===================================================== */
+
+.orders-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.order-card {
+    padding: 20px;
+
+    border: 1px solid #253744;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c161f,
+            #060b10
+        );
+}
+
+.order-card-head {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.order-card h3 {
+    font-size: 15px;
+}
+
+.order-status {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+.status-pending {
+    color: #ffc44d;
+
+    background: rgba(255,190,60,.08);
+
+    border: 1px solid rgba(255,190,60,.2);
+}
+
+.status-accepted {
+    color: #35df99;
+
+    background: rgba(35,220,145,.08);
+
+    border: 1px solid rgba(35,220,145,.2);
+}
+
+.status-rejected {
+    color: #ff6475;
+
+    background: rgba(255,60,80,.08);
+
+    border: 1px solid rgba(255,60,80,.2);
+}
+
+.order-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    color: #85939e;
+
+    font-size: 11px;
+}
+
+.order-description {
+    margin-top: 13px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+
+    color: #9ca8b2;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.order-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 16px;
+}
+
+.order-actions button {
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid #263744;
+
+    background: #09121a;
+
+    color: #b9c3cc;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.order-actions .accept-order {
+    border-color: #159d69;
+
+    background: rgba(20,180,110,.1);
+
+    color: #35df99;
+}
+
+.order-actions .reject-order {
+    border-color: #b82f43;
+
+    background: rgba(255,50,70,.08);
+
+    color: #ff6675;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.72);
+
+    backdrop-filter: blur(10px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 32px;
+
+    border: 1px solid #263c4c;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101c27,
+            #050a0f
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.65);
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid #263744;
+
+    border-radius: 10px;
+
+    background: #09121a;
+
+    color: #8d9ba7;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: white;
+
+    background: #d52c42;
+
+    border-color: #ff5266;
+}
+
+.modal-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0a6395,
+            #07131d
+        );
+
+    border: 1px solid #1597ff;
+
+    font-size: 30px;
+}
+
+.modal-box h2 {
+    font-size: 25px;
+}
+
+.modal-box > p {
+    margin-top: 7px;
+
+    color: #778692;
+
+    font-size: 12px;
+}
+
+.register-button {
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-top: 12px;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    font-weight: 900;
+
+    transition: .25s;
+}
+
+.register-button.google {
+    border: 1px solid #4285f4;
+
+    background: rgba(66,133,244,.1);
+
+    color: #8eb7ff;
+}
+
+.register-button.phone {
+    border: 1px solid #35df99;
+
+    background: rgba(35,220,145,.08);
+
+    color: #35df99;
+}
+
+.register-button.email {
+    border: 1px solid #a875ff;
+
+    background: rgba(160,100,255,.08);
+
+    color: #b994ff;
+}
+
+.register-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.2);
+}
+
+
+/* =====================================================
+   MODAL FORM
+===================================================== */
+
+.modal-box .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 15px;
+}
+
+.modal-box .form-group label {
+    color: #a8b5c0;
+
+    font-size: 11px;
+}
+
+.modal-box .form-group input,
+.modal-box .form-group textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    outline: none;
+
+    border: 1px solid #263744;
+
+    border-radius: 11px;
+
+    background: #071017;
+
+    color: white;
+}
+
+.modal-box .form-group input:focus,
+.modal-box .form-group textarea:focus {
+    border-color: #1597ff;
+}
+
+.modal-box .form-group textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+.cart-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    border: 1px solid #253744;
+
+    border-radius: 13px;
+
+    background: #071017;
+}
+
+.cart-item-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.cart-item-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(20,150,255,.08);
+
+    font-size: 20px;
+}
+
+.cart-item-name {
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.cart-item-profession {
+    margin-top: 3px;
+
+    color: #1597ff;
+
+    font-size: 10px;
+}
+
+.cart-remove {
+    padding: 7px 10px;
+
+    border: 1px solid rgba(255,60,80,.25);
+
+    border-radius: 8px;
+
+    background: rgba(255,60,80,.07);
+
+    color: #ff6475;
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+.cart-empty {
+    padding: 40px 10px;
+
+    text-align: center;
+}
+
+.cart-empty > div {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.cart-empty h3 {
+    font-size: 17px;
+}
+
+.cart-empty p {
+    margin-top: 6px;
+
+    color: #71808c;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.customer-profile {
+    margin-top: 20px;
+}
+
+.profile-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    color: #8b99a4;
+
+    font-size: 12px;
+}
+
+.profile-row strong {
+    color: white;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+
+    color: #52616e;
+}
+
+footer div {
+    color: #1597ff;
+
+    font-size: 18px;
+
+    font-weight: 900;
+}
+
+footer p {
+    margin-top: 8px;
+
+    font-size: 11px;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.language-box {
+    position: relative;
+}
+
+.language-button {
+    min-height: 39px;
+
+    padding: 0 12px;
+
+    border: 1px solid #263744;
+
+    border-radius: 10px;
+
+    background: #09121a;
+
+    color: #c5d0d9;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    transition: .25s;
+}
+
+.language-button:hover {
+    border-color: #1597ff;
+
+    color: white;
+
+    background: #0b2639;
+}
+
+.language-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    right: 0;
+
+    width: 210px;
+
+    max-height: 360px;
+
+    overflow-y: auto;
+
+    padding: 7px;
+
+    border: 1px solid #29404f;
+
+    border-radius: 14px;
+
+    background:
+        rgba(6,14,21,.98);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.55);
+
+    z-index: 9999;
+}
+
+.language-option {
+    width: 100%;
+
+    padding: 10px;
+
+    text-align: left;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #c1ccd5;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+.language-option:hover {
+    background: #0d2a40;
+
+    color: white;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .profession-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .workers-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .action-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .screen {
+        padding: 15px;
+    }
+
+    .welcome-card {
+        padding: 32px 20px;
+
+        border-radius: 24px;
+    }
+
+    .brand {
+        font-size: 29px;
+    }
+
+    .profession-container,
+    .worker-form-container {
+        padding: 22px 16px;
+
+        border-radius: 22px;
+    }
+
+    .profession-head h1 {
+        font-size: 25px;
+    }
+
+    .profession-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 9px;
+    }
+
+    .profession-card {
+        min-height: 135px;
+    }
+
+    .form-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .input-box.full {
+        grid-column: auto;
+    }
+
+    .header {
+        min-height: auto;
+
+        padding: 12px 15px;
+
+        align-items: flex-start;
+    }
+
+    .header-logo {
+        font-size: 16px;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+    .header-btn,
+    .language-button {
+        min-height: 34px;
+
+        padding: 0 8px;
+
+        font-size: 9px;
+    }
+
+    .role-badge {
+        padding: 7px 9px;
+
+        font-size: 8px;
+    }
+
+    .main-container {
+        width: 92%;
+
+        padding: 40px 0;
+    }
+
+    .dashboard-hero h1,
+    .worker-hero h1 {
+        font-size: 39px;
+    }
+
+    .action-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .workers-list {
+        grid-template-columns:
+            1fr;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    .search-row button {
+        min-height: 45px;
+    }
+
+    .workers-head {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .worker-hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .order-details {
+        grid-template-columns:
+            1fr;
+    }
+
+    .modal-box {
+        padding: 25px 18px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .welcome-card {
+        padding: 27px 14px;
+    }
+
+    .logo-box {
+        width: 75px;
+        height: 75px;
+
+        font-size: 35px;
+    }
+
+    .welcome-card h1 {
+        font-size: 23px;
+    }
+
+    .role-button {
+        min-height: 82px;
+
+        padding: 12px;
+    }
+
+    .role-icon {
+        width: 45px;
+        height: 45px;
+
+        font-size: 22px;
+    }
+
+    .role-content strong {
+        font-size: 11px;
+    }
+
+    .role-content small {
+        font-size: 10px;
+    }
+
+    .profession-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .profession-card {
+        min-height: 120px;
+
+        padding: 12px 5px;
+    }
+
+    .profession-card > span {
+        font-size: 29px;
+
+        margin-bottom: 9px;
+    }
+
+}
